@@ -68,7 +68,7 @@ fragments = load_fragment_samples("xml/fragment.xml")
 # 获取当前日期和时间，作为输出文件夹的名称
 current_datetime = datetime.datetime.now()
 ## 将日期时间格式化为字符串，例如 '2023-04-01_15-30-45'
-datetime_str = "output" + os.sep + current_datetime.strftime("%Y-%m-%d_%H-%M-%S")
+datetime_str = "output" + os.sep + current_datetime.strftime("SQLi_%Y-%m-%d_%H-%M-%S")
 
 # 创建输出文件夹
 ## 定义要创建的文件夹的完整路径（这里以当前脚本所在目录为例）
@@ -167,9 +167,7 @@ def generate_basic_test_case(repeat=1):
     # 遍历路径
     for i in sequences:
         for r in range(repeat):
-            test_case_file_name = (
-                f"{folder_path}{os.sep}{i.vulnerable()}{os.sep}test_case_{i.type}_{r}"
-            )
+            test_case_file_name = f"{folder_path}{os.sep}{i.vulnerable()}{os.sep}SQLi_test_case_{i.type}_{r}"
             cv = random.choice(controllable_variables)
             uv = random.choice(uncontrollable_variables)
             code = i.code
@@ -315,8 +313,8 @@ def genrate_discrimination_test_case(repeat=1):
         vulnerable_sequence = group["vulnerable_sequence"]
         non_vulnerable_sequence = group["non_vulnerable_sequence"]
         for r in range(repeat):
-            vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}test_case_{r}_{vulnerable_sequence.type}.php"
-            non_vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}test_case_{r}_{non_vulnerable_sequence.type}.php"
+            vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}SQLi_test_case_{r}_{vulnerable_sequence.type}.php"
+            non_vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}SQLi_test_case_{r}_{non_vulnerable_sequence.type}.php"
 
             cv = random.choice(controllable_variables)
             uv = random.choice(uncontrollable_variables)

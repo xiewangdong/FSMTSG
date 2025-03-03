@@ -167,9 +167,7 @@ def generate_basic_test_case(repeat=1):
     # 遍历路径
     for i in sequences:
         for r in range(repeat):
-            test_case_file_name = (
-                f"{folder_path}{os.sep}{i.vulnerable()}{os.sep}test_case_{i.type}_{r}"
-            )
+            test_case_file_name = f"{folder_path}{os.sep}{i.vulnerable()}{os.sep}XSS_test_case_{i.type}_{r}"
             cv = random.choice(controllable_variables)
             uv = random.choice(uncontrollable_variables)
             code = i.code
@@ -315,8 +313,8 @@ def genrate_discrimination_test_case(repeat=1):
         vulnerable_sequence = group["vulnerable_sequence"]
         non_vulnerable_sequence = group["non_vulnerable_sequence"]
         for r in range(repeat):
-            vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}test_case_{r}_{vulnerable_sequence.type}.php"
-            non_vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}test_case_{r}_{non_vulnerable_sequence.type}.php"
+            vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}XSS_test_case_{r}_{vulnerable_sequence.type}.php"
+            non_vulnerable_testcase_file_name = f"{folder_path}{os.sep}{group['name']}{os.sep}XSS_test_case_{r}_{non_vulnerable_sequence.type}.php"
 
             cv = random.choice(controllable_variables)
             uv = random.choice(uncontrollable_variables)
@@ -412,5 +410,3 @@ if __name__ == "__main__":
 
     # end = time.time()
     # print(end - start)
-
-
