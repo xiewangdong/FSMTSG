@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: xyd, with XmlGrid Online XML
+Editor, http://xmlgrid.net-->
+<!-- Date: 2024-07-18 -->
+<!-- 将Sink和Sanitizer合到一起写，由于两者绑定较深，所以放在一起 -->
+<sink>
+    <sample id="1" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            exit($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+
+
+    <sample id="2" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            die($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+
+
+    <sample id="3" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            echo &apos;欢迎您：&apos;.$GLOBALS[&apos;tainted&apos;];
+        </code>
+    </sample>
+
+
+    <sample id="4" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            echo $GLOBALS[&apos;tainted&apos;];
+        </code>
+    </sample>
+
+
+    <sample id="5" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            print($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+
+
+    <sample id="6" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            printf(&quot;%s&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+
+
+    <sample id="7" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            $a=var_export($GLOBALS[&apos;tainted&apos;]);
+
+        </code>
+    </sample>
+
+
+    <sample id="8" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            var_dump($GLOBALS[&apos;tainted&apos;]);
+
+        </code>
+    </sample>
+
+
+    <sample id="9" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            print_r($GLOBALS[&apos;tainted&apos;]);
+
+        </code>
+    </sample>
+
+
+    <sample id="10" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            $array_as8wi = array(&quot;tainted&quot;=&gt;$GLOBALS[&apos;tainted&apos;]);
+            $tainted = &quot;abc&quot;;
+            extract($array_as8wi);
+            print($tainted);
+        </code>
+    </sample>
+
+
+    <sample id="11" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES);
+        </sanitizer>
+        <sanitizer id="3" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_COMPAT);
+        </sanitizer>
+        <code>
+            print(&quot;&lt;input type=&apos;text&apos; name=name value=$GLOBALS[tainted] /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="12" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES);
+        </sanitizer>
+        <sanitizer id="3" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_COMPAT);
+        </sanitizer>
+        <code>
+            echo &quot;&lt;input data-info=&apos;$GLOBALS[tainted]&apos;&gt;&lt;/input&gt;&quot;;
+        </code>
+    </sample>
+
+
+    <sample id="13" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            $arr=array(100,$GLOBALS[&apos;tainted&apos;]);
+            vprintf(&quot;%d,%s&quot;,$arr);
+        </code>
+    </sample>
+
+
+    <sample id="14" valid="true" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            $out=fopen(&quot;php://output&quot;, &apos;w&apos;);
+            fwrite($out ,&quot;Welcome, &quot;.$GLOBALS[&apos;tainted&apos;]);
+            fclose($out);
+        </code>
+    </sample>
+
+
+    <!--        <sample id="15" valid="true" type="xss" variable_type="string">-->
+    <!--        <sanitizer id="1" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="2" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="3" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="4" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="5" sufficient="true">-->
+    <!--            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="6" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="7" sufficient="true">-->
+    <!--            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="8" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="9" sufficient="true">-->
+    <!--            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="10" sufficient="true">-->
+    <!--            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="11" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="12" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="13" sufficient="false">-->
+    <!--            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="14" sufficient="false">-->
+    <!--            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <code>-->
+    <!--            $id=addslashes($_GET[&apos;id&apos;]);-->
+    <!--$conn=mysqli_connect(&apos;localhost&apos;,&apos;root&apos;,&apos;123456&apos;,&apos;storedxss&apos;);-->
+    <!--$query=&quot;select * from users where id=&apos;&quot;.$id.&quot;&apos;&quot;;-->
+    <!--$result=mysqli_query($conn,$query);-->
+    <!--$value=mysqli_fetch_array($result);-->
+    <!--$GLOBALS[&apos;tainted&apos;]=$value[&apos;name&apos;];-->
+    <!--            /***************** Sufficient_Sanitizer begin ******************/-->
+    <!--            {{ Sufficient_Sanitizer }}-->
+    <!--            /***************** Sufficient_Sanitizer end *****************/-->
+    <!--            /***************** Insufficient_Sanitizer begin ******************/-->
+    <!--            {{ Insufficient_Sanitizer }}-->
+    <!--            /***************** Insufficient_Sanitizer end *****************/-->
+    <!--print(&quot;Welcome, &quot;.$GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </code>-->
+    <!--    </sample>-->
+
+
+    <!--        <sample id="16" valid="true" type="xss" variable_type="string">-->
+    <!--        <sanitizer id="1" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="2" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="3" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="4" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="5" sufficient="true">-->
+    <!--            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="6" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="7" sufficient="true">-->
+    <!--            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="8" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="9" sufficient="true">-->
+    <!--            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="10" sufficient="true">-->
+    <!--            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="11" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="12" sufficient="true">-->
+    <!--            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="13" sufficient="false">-->
+    <!--            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <sanitizer id="14" sufficient="false">-->
+    <!--            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </sanitizer>-->
+    <!--        <code>-->
+    <!--$file=$_GET[&apos;file&apos;];-->
+    <!--$fd=fopen($file,&quot;r&quot;);-->
+    <!--$GLOBALS[&apos;tainted&apos;]=fread($fd,1024);-->
+    <!--            /***************** Sufficient_Sanitizer begin ******************/-->
+    <!--            {{ Sufficient_Sanitizer }}-->
+    <!--            /***************** Sufficient_Sanitizer end *****************/-->
+    <!--            /***************** Insufficient_Sanitizer begin ******************/-->
+    <!--            {{ Insufficient_Sanitizer }}-->
+    <!--            /***************** Insufficient_Sanitizer end *****************/-->
+    <!--print($GLOBALS[&apos;tainted&apos;]);-->
+    <!--        </code>-->
+    <!--    </sample>-->
+
+
+    <sample id="17" valid="false" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            printf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+
+        </code>
+    </sample>
+
+    <sample id="18" valid="false" type="xss" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
+        </sanitizer>
+        <sanitizer id="6" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="7" sufficient="true">
+            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
+        </sanitizer>
+        <sanitizer id="8" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="9" sufficient="true">
+            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
+        </sanitizer>
+        <sanitizer id="10" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
+        </sanitizer>
+        <sanitizer id="11" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="12" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="13" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="14" sufficient="false">
+            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <code>
+            $arr=array(100,$GLOBALS[&apos;tainted&apos;]);
+            vprintf(&quot;%d,%d&quot;,$arr);
+        </code>
+    </sample>
+
+</sink>

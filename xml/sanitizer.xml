@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: xyd, with XmlGrid Online XML
+Editor, http://xmlgrid.net-->
+<!-- Date: 2024-07-18 -->
+<!-- Sanitizer 集合，主要用于 Invalid Sink 的配合使用-->
+<sanitizer>
+    <!-- <sample id="1" variable_type="string">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=mysqli_escape_string($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample> -->
+    <sample id="2" variable_type="string">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=mysqli_real_escape_string($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+    <sample id="3" variable_type="string">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=addcslashes($GLOBALS[&apos;tainted&apos;],&quot;\\\&apos;\&quot;&quot;);
+        </code>
+    </sample>
+    <sample id="4" variable_type="string">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=addslashes($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+    <sample id="5" variable_type="string">
+        <code>
+            $pattern=&quot;/[\\\\,&apos;,\&quot;]/&quot;;
+            $GLOBALS[&apos;tainted&apos;]=preg_replace($pattern,&quot;&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+    <sample id="6" variable_type="string">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=str_replace(array(&quot;&apos;&quot;,&quot;\\&quot;,&quot;\&quot;&quot;),&quot;&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+    <sample id="7" variable_type="number">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=filter_var($GLOBALS[&apos;tainted&apos;],FILTER_SANITIZE_NUMBER_INT);
+        </code>
+    </sample>
+    <sample id="8" variable_type="number">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=addslashes($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+    <sample id="9" variable_type="number">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </code>
+    </sample>
+    <sample id="10" variable_type="number">
+        <code>
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </code>
+    </sample>
+    <sample id="11" variable_type="number">
+        <code>
+            settype($GLOBALS[&apos;tainted&apos;],&quot;int&quot;);
+        </code>
+    </sample>
+
+
+</sanitizer>

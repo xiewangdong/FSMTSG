@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: xyd, with XmlGrid Online XML
+Editor, http://xmlgrid.net-->
+<!-- Date: 2024-07-18 -->
+<variable>
+    <!-- Controllable Input -->
+    <sample id="1" controllable="true">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $_GET[&apos;TaintedData&apos;];
+        </code>
+    </sample>
+    <sample id="2" controllable="true">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $_POST[&apos;TaintedData&apos;];
+        </code>
+    </sample>
+    <sample id="3" controllable="true">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $_REQUEST[&apos;TaintedData&apos;];
+        </code>
+    </sample>
+    <sample id="4" controllable="true">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $_COOKIE[&apos;TaintedData&apos;];
+        </code>
+    </sample>
+    <!-- <sample id="5" controllable="true">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $_FILES[&apos;TaintedData&apos;];
+        </code>
+    </sample>
+    <sample id="6" controllable="true">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $_SERVER[&apos;TaintedData&apos;];
+        </code>
+    </sample> -->
+    <sample id="7" controllable="true">
+        <code>
+            session_start();
+            $_SESSION[&apos;TaintedData&apos;]= $_REQUEST[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $_SESSION[&apos;TaintedData&apos;];
+        </code>
+    </sample>
+    <!-- <sample id="8" controllable="true">
+        <code>
+            
+            class Input{
+            public function getInput(){
+            return $_GET[&apos;TaintedData&apos;];
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample> -->
+    <sample id="9" controllable="true">
+        <code>
+            
+            $array = array();
+            $array[] = &apos;Constant&apos;;
+            $array[] = $_GET[&apos;TaintedData&apos;] ;
+            $array[] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $array[1] ;
+        </code>
+    </sample>
+    <!-- <sample id="10" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input;
+            }
+
+            public function __construct(){
+            $this-&gt;input = $_GET[&apos;TaintedData&apos;] ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample> -->
+    <!-- <sample id="11" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[1];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[0]= &apos;Constant&apos; ;
+            $this-&gt;input[1]= $_GET[&apos;TaintedData&apos;] ;
+            $this-&gt;input[2]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample> -->
+    <!-- <sample id="12" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[&apos;realOne&apos;];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[&apos;test&apos;]= &apos;Constant&apos; ;
+            $this-&gt;input[&apos;realOne&apos;]= $_GET[&apos;TaintedData&apos;] ;
+            $this-&gt;input[&apos;trap&apos;]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="13" controllable="true">
+        <code>
+            
+            class Input{
+            public function getInput(){
+            return $_POST[&apos;TaintedData&apos;];
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample> -->
+    <sample id="14" controllable="true">
+        <code>
+            
+            $array = array();
+            $array[] = &apos;Constant&apos;;
+            $array[] = $_POST[&apos;TaintedData&apos;] ;
+            $array[] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $array[1] ;
+        </code>
+    </sample>
+    <!-- <sample id="15" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input;
+            }
+
+            public function __construct(){
+            $this-&gt;input = $_POST[&apos;TaintedData&apos;] ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="16" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[1];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[0]= &apos;Constant&apos; ;
+            $this-&gt;input[1]= $_POST[&apos;TaintedData&apos;] ;
+            $this-&gt;input[2]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="17" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[&apos;realOne&apos;];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[&apos;test&apos;]= &apos;Constant&apos; ;
+            $this-&gt;input[&apos;realOne&apos;]= $_POST[&apos;TaintedData&apos;] ;
+            $this-&gt;input[&apos;trap&apos;]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="18" controllable="true">
+        <code>
+            
+            class Input{
+            public function getInput(){
+            return $_COOKIE[&apos;TaintedData&apos;];
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample> -->
+    <sample id="19" controllable="true">
+        <code>
+            
+            $array = array();
+            $array[] = &apos;Constant&apos;;
+            $array[] = $_COOKIE[&apos;TaintedData&apos;] ;
+            $array[] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $array[1] ;
+        </code>
+    </sample>
+    <!-- <sample id="20" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input;
+            }
+
+            public function __construct(){
+            $this-&gt;input = $_COOKIE[&apos;TaintedData&apos;] ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="21" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[1];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[0]= &apos;Constant&apos; ;
+            $this-&gt;input[1]= $_COOKIE[&apos;TaintedData&apos;] ;
+            $this-&gt;input[2]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="22" controllable="true">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[&apos;realOne&apos;];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[&apos;test&apos;]= &apos;Constant&apos; ;
+            $this-&gt;input[&apos;realOne&apos;]= $_COOKIE[&apos;TaintedData&apos;] ;
+            $this-&gt;input[&apos;trap&apos;]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample> -->
+
+    <!-- Uncontrollable Input -->
+    <sample id="31" controllable="false">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = $_GET[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample>
+    <sample id="32" controllable="false">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = $_POST[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample>
+    <sample id="33" controllable="false">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = $_REQUEST[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample>
+    <sample id="34" controllable="false">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = $_COOKIE[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample>
+    <!-- <sample id="35" controllable="false">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = $_FILES[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample>
+    <sample id="36" controllable="false">
+        <code>
+            
+            $GLOBALS[&apos;tainted&apos;] = $_SERVER[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample> -->
+    <sample id="37" controllable="false">
+        <code>
+            session_start();
+            $_SESSION[&apos;TaintedData&apos;]= $_REQUEST[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = $_SESSION[&apos;TaintedData&apos;];
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample>
+    <!-- <sample id="38" controllable="false">
+        <code>
+            
+            class Input{
+            public function getInput(){
+            return $_GET[&apos;TaintedData&apos;];
+            }
+            }
+            $temp = new Input();
+            if(1==1){
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+            }
+            else{
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+            }
+        </code>
+    </sample> -->
+    <sample id="39" controllable="false">
+        <code>
+            
+            $array = array();
+            $array[] = &apos;Constant&apos;;
+            $array[] = $_GET[&apos;TaintedData&apos;] ;
+            $array[] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $array[2] ;
+        </code>
+    </sample>
+    <!-- <sample id="40" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input;
+            }
+
+            public function __construct(){
+            if(1&gt;2){
+            $this-&gt;input = $_GET[&apos;TaintedData&apos;] ;
+            }
+            else{
+            $this-&gt;input = &apos;Constant&apos; ;
+            }
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="41" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[0];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[0]= &apos;Constant&apos; ;
+            $this-&gt;input[1]= $_GET[&apos;TaintedData&apos;] ;
+            $this-&gt;input[2]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="42" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[&apos;trap&apos;];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[&apos;test&apos;]= &apos;Constant&apos; ;
+            $this-&gt;input[&apos;realOne&apos;]= $_GET[&apos;TaintedData&apos;] ;
+            $this-&gt;input[&apos;trap&apos;]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="43" controllable="false">
+        <code>
+            
+            class Input{
+            public function getInput(){
+            return $_POST[&apos;TaintedData&apos;];
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample> -->
+    <sample id="44" controllable="false">
+        <code>
+            
+            $array = array();
+            $array[] = &apos;Constant&apos;;
+            $array[] = $_POST[&apos;TaintedData&apos;] ;
+            $array[] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $array[2] ;
+        </code>
+    </sample>
+    <!-- <sample id="45" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input;
+            }
+
+            public function __construct(){
+            $this-&gt;input = &apos;Constant&apos; ;
+            if(!isset($this-&gt;input)){
+            $this-&gt;input = $_POST[&apos;TaintedData&apos;] ;
+            }
+            else{
+            $this-&gt;input = &apos;Constant&apos; ;
+            }
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="46" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[0];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[0]= &apos;Constant&apos; ;
+            $this-&gt;input[1]= $_POST[&apos;TaintedData&apos;] ;
+            $this-&gt;input[2]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="47" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[&apos;test&apos;];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[&apos;test&apos;]= &apos;Constant&apos; ;
+            $this-&gt;input[&apos;realOne&apos;]= $_POST[&apos;TaintedData&apos;] ;
+            $this-&gt;input[&apos;trap&apos;]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="48" controllable="false">
+        <code>
+            
+            class Input{
+            public function getInput(){
+            return $_COOKIE[&apos;TaintedData&apos;];
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
+        </code>
+    </sample> -->
+    <sample id="49" controllable="false">
+        <code>
+            
+            $array = array();
+            $array[] = &apos;Constant&apos;;
+            $array[] = $_COOKIE[&apos;TaintedData&apos;] ;
+            $array[] = &apos;Constant&apos;;
+            $GLOBALS[&apos;tainted&apos;] = $array[2] ;
+        </code>
+    </sample>
+    <!-- <sample id="50" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input;
+            }
+
+            public function __construct(){
+            $this-&gt;input = &apos;Constant&apos; ;
+            if(!isset($this-&gt;input)){
+            $this-&gt;input = $_COOKIE[&apos;TaintedData&apos;] ;
+            }
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="51" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[0];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[0]= &apos;Constant&apos; ;
+            $this-&gt;input[1]= $_COOKIE[&apos;TaintedData&apos;] ;
+            $this-&gt;input[2]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample>
+    <sample id="52" controllable="false">
+        <code>
+            
+            class Input{
+            private $input;
+
+            public function getInput(){
+            return $this-&gt;input[&apos;test&apos;];
+            }
+
+            public function __construct(){
+            $this-&gt;input = array();
+            $this-&gt;input[&apos;test&apos;]= &apos;Constant&apos; ;
+            $this-&gt;input[&apos;realOne&apos;]= $_COOKIE[&apos;TaintedData&apos;] ;
+            $this-&gt;input[&apos;trap&apos;]= &apos;Constant&apos; ;
+            }
+            }
+            $temp = new Input();
+            $GLOBALS[&apos;tainted&apos;] = $temp-&gt;getInput();
+        </code>
+    </sample> -->
+</variable>

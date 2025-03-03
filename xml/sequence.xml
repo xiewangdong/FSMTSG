@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: xyd, with XmlGrid Online XML
+Editor, http://xmlgrid.net-->
+<!-- Date: 2024-07-18 -->
+<sequence>
+    <sample id="1" type="none" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="2" type="UV" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="3" type="UV.IS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            /***************** Insufficient_Sanitizer begin ******************/
+            {{ Insufficient_Sanitizer }}
+            /***************** Insufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="4" type="UV.SS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            /***************** Sufficient_Sanitizer begin ******************/
+            {{ Sufficient_Sanitizer }}
+            /***************** Sufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="5" type="UV.VS" vulnerability="false" discrimination_group="CV.VS">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            /***************** Valid_Sink begin ******************/
+            {{ Valid_Sink }}
+            /***************** Valid_Sink end *****************/
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="6" type="UV.NS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            /***************** Invalid_Sink begin ******************/
+            {{ Invalid_Sink }}
+            /***************** Invalid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="7" type="UV.IS.VS" vulnerability="false" discrimination_group="CV.IS.VS">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Insufficient_Sanitizer begin ******************/
+            {{ Insufficient_Sanitizer }}
+            /***************** Insufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Valid_Sink begin ******************/
+            {{ Valid_Sink }}
+            /***************** Valid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="8" type="UV.IS.NS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Insufficient_Sanitizer begin ******************/
+            {{ Insufficient_Sanitizer }}
+            /***************** Insufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Invalid_Sink begin ******************/
+            {{ Invalid_Sink }}
+            /***************** Invalid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="9" type="UV.SS.VS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Sufficient_Sanitizer begin ******************/
+            {{ Sufficient_Sanitizer }}
+            /***************** Sufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Valid_Sink begin ******************/
+            {{ Valid_Sink }}
+            /***************** Valid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="10" type="UV.SS.NS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Uncontrollable_Variable begin ******************/
+            {{ Uncontrollable_Variable }}
+            /***************** Uncontrollable_Variable end ******************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Sufficient_Sanitizer begin ******************/
+            {{ Sufficient_Sanitizer }}
+            /***************** Sufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Invalid_Sink begin ******************/
+            {{ Invalid_Sink }}
+            /***************** Invalid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="11" type="CV" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="12" type="CV.SS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Sufficient_Sanitizer begin ******************/
+            {{ Sufficient_Sanitizer }}
+            /***************** Sufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="13" type="CV.SS.VS" vulnerability="false" discrimination_group="CV.IS.VS">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Sufficient_Sanitizer begin ******************/
+            {{ Sufficient_Sanitizer }}
+            /***************** Sufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Valid_Sink begin ******************/
+            {{ Valid_Sink }}
+            /***************** Valid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="14" type="CV.SS.NS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Sufficient_Sanitizer begin ******************/
+            {{ Sufficient_Sanitizer }}
+            /***************** Sufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Invalid_Sink begin ******************/
+            {{ Invalid_Sink }}
+            /***************** Invalid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="15" type="CV.NS" vulnerability="false" discrimination_group="CV.VS">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Invalid_Sink begin ******************/
+            {{ Invalid_Sink }}
+            /***************** Invalid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="16" type="CV.IS" vulnerability="false" discrimination_group="none">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Insufficient_Sanitizer begin ******************/
+            {{ Insufficient_Sanitizer }}
+            /***************** Insufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="17" type="CV.IS.NS" vulnerability="false" discrimination_group="CV.IS.VS">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Insufficient_Sanitizer begin ******************/
+            {{ Insufficient_Sanitizer }}
+            /***************** Insufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Invalid_Sink begin ******************/
+            {{ Invalid_Sink }}
+            /***************** Invalid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="18" type="CV.IS.VS" vulnerability="true" discrimination_group="CIV">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+ 
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Insufficient_Sanitizer begin ******************/
+            {{ Insufficient_Sanitizer }}
+            /***************** Insufficient_Sanitizer end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Valid_Sink begin ******************/
+            {{ Valid_Sink }}
+            /***************** Valid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+    <sample id="19" type="CV.VS" vulnerability="true" discrimination_group="CV">
+        <code>
+            &lt;?php
+            global $tainted;
+            $tainted = &apos;Constant&apos;;
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            /***************** Controllable_Variable begin ******************/
+            {{ Controllable_Variable }}
+            /***************** Controllable_Variable end *****************/
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** Valid_Sink begin ******************/
+            {{ Valid_Sink }}
+            /***************** Valid_Sink end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            
+            /***************** fragment begin ******************/
+            {{ fragment }}
+            /***************** fragment end *****************/
+
+            ?&gt;
+        </code>
+    </sample>
+</sequence>

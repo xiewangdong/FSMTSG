@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: xyd, with XmlGrid Online XML
+Editor, http://xmlgrid.net-->
+<!-- Date: 2024-07-18 -->
+<!-- 代码片段，用于引入一些无用代码，增加代码复杂性，片段中尽量不包含 Variable -->
+<fragment>
+    <sample id="1" type="simple">
+        <code>
+            $hdjeuyf98_uejI = 1+1;
+            echo $hdjeuyf98_uejI;
+        </code>
+    </sample>
+    <sample id="2" type="simple">
+        <code>
+            echo &quot;Hello, world!&quot;;
+        </code>
+    </sample>
+    <sample id="3" type="simple">
+        <code>
+            define(&quot;UDJEKMXCIDKJF&quot;, &quot;Hello world.&quot;);
+            echo UDJEKMXCIDKJF;
+        </code>
+    </sample>
+    <sample id="4" type="simple">
+        <code>
+            const CONSTANTUJHBD = &apos;Hello World&apos;;
+            echo CONSTANTUJHBD;
+        </code>
+    </sample>
+    <sample id="6" type="function">
+        <code>
+            function {{ random_name }}() {
+            echo &apos;hello world!&apos;;
+            }
+        </code>
+    </sample>
+    <sample id="7" type="class">
+        <code>
+            class {{ random_name }} {
+            static function CallbackMethod_Podkfuejfsd3() {
+            echo &apos;Hello World!&apos;;
+            }
+            }
+        </code>
+    </sample>
+    <sample id="8" type="function">
+        <code>
+            function {{ random_name }}(): iterable {
+            yield 1;
+            yield 2;
+            yield 3;
+            }
+        </code>
+    </sample>
+    <sample id="9" type="simple">
+        <code>
+            echo &apos;line number: &apos; . __LINE__ ;
+        </code>
+    </sample>
+    <sample id="10" type="function">
+        <code>
+            function {{ random_name }}() {
+            echo &apos;function name:&apos; . __FUNCTION__ ;
+            }
+            {{ random_name }}();
+        </code>
+    </sample>
+    <sample id="11" type="class">
+        <code>
+            class {{ random_name }} {
+            public function sayHello() {
+            echo &apos;Hello &apos;;
+            }
+            }
+            trait SayWorld_iujfknsj94R {
+            public function sayHello() {
+            parent::sayHello();
+            echo &apos;World!&apos;;
+            }
+            }
+            class MyHelloWorld_{{ random_name }} extends {{ random_name }} {
+            use SayWorld_iujfknsj94R;
+            }
+        </code>
+    </sample>
+    <sample id="12" type="simple">
+        <code>
+            print_r(hash_algos());
+        </code>
+    </sample>
+    <sample id="13" type="simple">
+        <code>
+            echo hash(&apos;sha256&apos;, &apos;The quick brown fox jumped over the lazy
+            dog.&apos;);
+        </code>
+    </sample>
+    <sample id="14" type="simple">
+        <code>
+            var_dump(checkdate(12, 31, 2000));
+        </code>
+    </sample>
+    <sample id="15" type="simple">
+        <code>
+            date_default_timezone_set(&apos;Asia/Shanghai&apos;);
+            if (date_default_timezone_get()) {
+            echo &apos;date_default_timezone_set: &apos; . date_default_timezone_get() .
+            &apos;&lt;br /&gt;&apos;;
+            }
+            if (ini_get(&apos;date.timezone&apos;)) {
+            echo &apos;date.timezone: &apos; . ini_get(&apos;date.timezone&apos;);
+            }
+        </code>
+    </sample>
+    <sample id="16" type="simple">
+        <code>
+            date_default_timezone_set(&apos;Asia/Shanghai&apos;);
+            echo date_default_timezone_get() . &apos; =&gt; &apos; . date(&apos;e&apos;) . &apos;
+            =&gt; &apos; . date(&apos;T&apos;);
+        </code>
+    </sample>
+    <sample id="17" type="simple">
+        <code>
+            print_r(gettimeofday());
+            echo gettimeofday(true);
+        </code>
+    </sample>
+    <sample id="18" type="simple">
+        <code>
+            echo cos(M_PI); // -1
+        </code>
+    </sample>
+    <sample id="19" type="simple">
+        <code>
+            interface FooU73ijhgbb_{{ random_name }} { }
+            interface BarTgdshd65df_{{ random_name }} { }
+            class BazQasbxgdte9_{{ random_name }} implements FooU73ijhgbb_{{ random_name }}, BarTgdshd65df_{{ random_name }} { }
+            $rcudjdhreud1 = new ReflectionClass(&quot;BazQasbxgdte9_{{ random_name }}&quot;);
+            print_r($rcudjdhreud1-&gt;getInterfaces());
+        </code>
+    </sample>
+    <sample id="20" type="function">
+        <code>
+            function {{ random_name }}()
+            {
+            echo &quot;Kai Jim Refsnes&quot;;
+            }
+            {{ random_name }}();
+        </code>
+    </sample>
+    <sample id="21" type="function">
+        <code>
+            // 简单的字符串反转函数
+            function {{ random_name }}($str)
+            {
+            return strrev($str);
+            }
+            $reversed = {{ random_name }}(&quot;hello&quot;);
+            echo $reversed; // 输出 &quot;olleh&quot;
+        </code>
+    </sample>
+    <sample id="22" type="function">
+        <code>
+            // 计算数组中数字的总和
+            function {{ random_name }}($array)
+            {
+            $sum = 0;
+            foreach ($array as $value) {
+            $sum += $value;
+            }
+            return $sum;
+            }
+            $numbers = [1, 2, 3, 4, 5];
+            $total = {{ random_name }}($numbers);
+            echo $total;
+        </code>
+    </sample>
+    <sample id="23" type="function">
+        <code>
+            // 检查年份是否为闰年
+            function {{ random_name }}($year)
+            {
+            return (($year % 4 == 0) &amp;&amp; ($year % 100 != 0)) || ($year % 400 == 0);
+            }
+            echo {{ random_name }}(2024) ? &apos;Yes&apos; : &apos;No&apos;;
+        </code>
+    </sample>
+    <sample id="24" type="function">
+        <code>
+            // 验证电子邮件地址的格式
+            function {{ random_name }}($email)
+            {
+            return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+            }
+            $email = &quot;user@example.com&quot;;
+            if ({{ random_name }}($email)) {
+            echo &quot;有效的电子邮件地址&quot;;
+            } else {
+            echo &quot;无效的电子邮件地址&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="25" type="function">
+        <code>
+            // 生成随机密码
+            function {{ random_name }}($length = 8)
+            {
+            $characters =
+            &apos;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&apos;;
+            $password = &apos;&apos;;
+            for ($i = 0; $i &lt; $length; $i++) {
+            $password .= $characters[mt_rand(0, strlen($characters) - 1)];
+            }
+            return $password;
+            }
+            $password = {{ random_name }}(10);
+            echo $password;
+        </code>
+    </sample>
+    <sample id="26" type="function">
+        <code>
+            // 斐波那契数列
+            function {{ random_name }}($n)
+            {
+            $fib = [0, 1];
+            for ($i = 2; $i &lt; $n; $i++) {
+            $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
+            }
+            return $fib;
+            }
+            $sequence = {{ random_name }}(10);
+            print_r($sequence);
+        </code>
+    </sample>
+    <sample id="27" type="function">
+        <code>
+            // 二分查找
+            function {{ random_name }}($array, $target)
+            {
+            $low = 0;
+            $high = count($array) - 1;
+            while ($low &lt;= $high) {
+            $mid = floor(($low + $high) / 2);
+            if ($array[$mid] &lt; $target) {
+            $low = $mid + 1;
+            } elseif ($array[$mid] &gt; $target) {
+            $high = $mid - 1;
+            } else {
+            return $mid;
+            }
+            }
+            return -1;
+            }
+            $sortedArray = [1, 3, 5, 7, 9];
+            $target = 5;
+            $result = {{ random_name }}($sortedArray, $target);
+            if ($result !== -1) {
+            echo &quot;找到目标: {$sortedArray[$result]}&quot;;
+            } else {
+            echo &quot;未找到目标&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="28" type="function">
+        <code>
+            // 计算两个日期之间的差异
+            function {{ random_name }}($startDate, $endDate)
+            {
+            $start = new DateTime($startDate);
+            $end = new DateTime($endDate);
+            $interval = $start-&gt;diff($end);
+            return $interval-&gt;days;
+            }
+            echo {{ random_name }}(&apos;2024-01-01&apos;, &apos;2024-01-31&apos;);
+        </code>
+    </sample>
+    <sample id="29" type="function">
+        <code>
+            // 验证IP地址是否为有效的IPv4地址
+            function {{ random_name }}($ip)
+            {
+            return filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) !== false;
+            }
+            echo {{ random_name }}(&apos;192.168.1.1&apos;) ? &apos;Valid IPv4 address&apos; :
+            &apos;Invalid IPv4 address&apos;;
+        </code>
+    </sample>
+    <sample id="30" type="function">
+        <code>
+            // 生成唯一标识符（UUID）
+            function {{ random_name }}()
+            {
+            return sprintf(&apos;%04x%04x-%04x-%04x-%04x-%04x%04x%04x&apos;,
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0x0fff) | 0x4000,
+            mt_rand(0, 0x3fff) | 0x8000,
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
+            );
+            }
+            echo {{ random_name }}(); // 输出一个UUID
+        </code>
+    </sample>
+    <sample id="31" type="function">
+        <code>
+            // 计算数组中的最大值
+            function {{ random_name }}(array $array)
+            {
+            return max($array);
+            }
+            $numbers = [3, 5, 7, 2, 8, 9, 1];
+            echo {{ random_name }}($numbers);
+        </code>
+    </sample>
+    <sample id="32" type="function">
+        <code>
+            // 检测一个字符串是否是回文
+            function {{ random_name }}($string)
+            {
+            $cleanString = strtolower(preg_replace(&apos;/[^a-zA-Z0-9]/&apos;, &apos;&apos;,
+            $string));
+            $reversedString = strrev($cleanString);
+            return $cleanString === $reversedString;
+            }
+            echo {{ random_name }}(&quot;Racecar&quot;) ? &apos;It is a palindrome.&apos; : &apos;It is
+            not a palindrome.&apos;;
+        </code>
+    </sample>
+    <sample id="33" type="function">
+        <code>
+            // 简单计算器
+            function {{ random_name }}($num1, $num2, $operation)
+            {
+            switch ($operation) {
+            case &apos;add&apos;:
+            return $num1 + $num2;
+            case &apos;subtract&apos;:
+            return $num1 - $num2;
+            case &apos;multiply&apos;:
+            return $num1 * $num2;
+            case &apos;divide&apos;:
+            return $num2 != 0 ? $num1 / $num2 : &apos;Error! Division by zero.&apos;;
+            default:
+            return &apos;Invalid operation&apos;;
+            }
+            }
+            echo {{ random_name }}(10, 5, &apos;add&apos;);
+        </code>
+    </sample>
+    <sample id="34" type="function">
+        <code>
+            // 基础的登录验证
+            function {{ random_name }}($username, $password)
+            {
+            // 假设我们有一个用户名和密码
+            $validUser = &apos;admin&apos;;
+            $validPassword = &apos;password123&apos;;
+            return $username === $validUser &amp;&amp; $password === $validPassword;
+            }
+            if ({{ random_name }}(&apos;admin&apos;, &apos;password123&apos;)) {
+            echo &apos;Login successful!&apos;;
+            } else {
+            echo &apos;Login failed!&apos;;
+            }
+        </code>
+    </sample>
+    <sample id="35" type="function">
+        <code>
+            // 检查变量是否为数组
+            function {{ random_name }}($variable)
+            {
+            return is_array($variable);
+            }
+            echo {{ random_name }}(array(1, 2, 3)) ? &apos;Yes, it is an array.&apos; : &apos;No, it is not an
+            array.&apos;;
+        </code>
+    </sample>
+    <sample id="36" type="function">
+        <code>
+            // 基础的XML解析
+            function {{ random_name }}($xmlString)
+            {
+            $simpleXml = simplexml_load_string($xmlString);
+            $json = json_encode($simpleXml);
+            $array = json_decode($json, true);
+            return $array;
+            }
+            $xml = &apos;&lt;root&gt;&lt;item&gt;value&lt;/item&gt;&lt;/root&gt;&apos;;
+            $parsedXml = {{ random_name }}($xml);
+            print_r($parsedXml); // 输出解析后的数组
+        </code>
+    </sample>
+    <sample id="37" type="class">
+        <code>
+            // 自定义异常处理类：
+            class {{ random_name }} extends Exception
+            {
+            public function __construct($message, $code = 0, Exception $previous = null)
+            {
+            parent::__construct($message, $code, $previous);
+            }
+            public function customRender()
+            {
+            http_response_code($this-&gt;code);
+            echo &quot;Error {$this-&gt;code}: {$this-&gt;message}&quot;;
+            }
+            }
+            try {
+            if (1 == 2) {
+            throw new {{ random_name }}(&quot;Something went wrong!&quot;, 500);
+            }
+            } catch ({{ random_name }} $e) {
+            $e-&gt;customRender();
+            }
+        </code>
+    </sample>
+    <sample id="38" type="class">
+        <code>
+            // 数据验证类：
+            class {{ random_name }}
+            {
+            public function validate($data, $rules)
+            {
+            $errors = [];
+            foreach ($rules as $field =&gt; $rule) {
+            if ($rule === &apos;required&apos; &amp;&amp; empty($data[$field])) {
+            $errors[$field] = &quot;The {$field} field is required.&quot;;
+            }
+            }
+            return $errors;
+            }
+            }
+            $validator = new {{ random_name }}();
+            $inputData = [&apos;username&apos; =&gt; &apos;&apos;, &apos;password&apos; =&gt;
+            &apos;secret&apos;];
+            $rules = [&apos;username&apos; =&gt; &apos;required&apos;, &apos;password&apos; =&gt;
+            &apos;required&apos;];
+            $errors = $validator-&gt;validate($inputData, $rules);
+            if (empty($errors)) {
+            echo &quot;Validation passed.&quot;;
+            } else {
+            print_r($errors);
+            }
+        </code>
+    </sample>
+    <sample id="39" type="class">
+        <code>
+            // 分页类：
+            class {{ random_name }}
+            {
+            public $totalItems;
+            public $itemsPerPage;
+            public $currentPage;
+            public function __construct($totalItems, $itemsPerPage, $currentPage = 1)
+            {
+            $this-&gt;totalItems = $totalItems;
+            $this-&gt;itemsPerPage = $itemsPerPage;
+            $this-&gt;currentPage = max(1, $currentPage);
+            }
+            public function render()
+            {
+            $pages = ceil($this-&gt;totalItems / $this-&gt;itemsPerPage);
+            $html = &quot;Page {$this-&gt;currentPage} of {$pages}&quot;;
+            return $html;
+            }
+            }
+            $paginator = new {{ random_name }}(100, 10, 5);
+            echo $paginator-&gt;render(); // 输出 &quot;Page 5 of 10&quot;
+        </code>
+    </sample>
+    <sample id="40" type="class">
+        <code>
+            // 事件调度器：
+            class {{ random_name }}
+            {
+            protected $listeners = [];
+            public function listen($eventName, callable $listener)
+            {
+            if (!isset($this-&gt;listeners[$eventName])) {
+            $this-&gt;listeners[$eventName] = [];
+            }
+            $this-&gt;listeners[$eventName][] = $listener;
+            }
+            public function dispatch($eventName, $data = null)
+            {
+            if (!isset($this-&gt;listeners[$eventName])) {
+            return;
+            }
+            foreach ($this-&gt;listeners[$eventName] as $listener) {
+            call_user_func($listener, $data);
+            }
+            }
+            }
+            $dispatcher = new {{ random_name }}();
+            $dispatcher-&gt;listen(&apos;greet&apos;, function ($name) {
+            echo &quot;Hello, {$name}!&quot;;
+            });
+            $dispatcher-&gt;dispatch(&apos;greet&apos;, &apos;World&apos;); // 输出 &quot;Hello, World!&quot;
+        </code>
+    </sample>
+    <sample id="41" type="class">
+        <code>
+            // 文件上传处理器：
+            class {{ random_name }}
+            {
+            private $targetDirectory;
+            public function __construct($targetDirectory)
+            {
+            $this-&gt;targetDirectory = $targetDirectory;
+            }
+            public function upload($file)
+            {
+            $targetFile = $this-&gt;targetDirectory . basename($file[&apos;name&apos;]);
+            if (move_uploaded_file($file[&apos;tmp_name&apos;], $targetFile)) {
+            return $targetFile;
+            } else {
+            return false;
+            }
+            }
+            }
+            $uploadDir = &apos;uploads/&apos;;
+            if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+            }
+            $uploader = new {{ random_name }}($uploadDir);
+            if ($uploader-&gt;upload($_FILES[&apos;file&apos;]) !== false) {
+            echo &quot;The file has been uploaded.&quot;;
+            } else {
+            echo &quot;Possible file upload attack!&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="42" type="class">
+        <code>
+            // 简单的缓存类：
+            class {{ random_name }}
+            {
+            private $cache = [];
+            public function set($key, $value, $minutes = 0)
+            {
+            $timestamp = time();
+            $this-&gt;cache[$key] = [
+            &apos;value&apos; =&gt; $value,
+            &apos;expires&apos; =&gt; $minutes &gt; 0 ? $timestamp + ($minutes * 60) : 0
+            ];
+            }
+            public function get($key)
+            {
+            if (!isset($this-&gt;cache[$key])) {
+            return null;
+            }
+            if ($this-&gt;cache[$key][&apos;expires&apos;] &amp;&amp; time() &gt;
+            $this-&gt;cache[$key][&apos;expires&apos;]) {
+            unset($this-&gt;cache[$key]);
+            return null;
+            }
+            return $this-&gt;cache[$key][&apos;value&apos;];
+            }
+            }
+            $cache = new {{ random_name }}();
+            $cache-&gt;set(&apos;foo&apos;, &apos;bar&apos;, 5); // 缓存5分钟
+            $value = $cache-&gt;get(&apos;foo&apos;);
+            echo $value; // 输出 &quot;bar&quot;
+        </code>
+    </sample>
+    <sample id="43" type="class">
+        <code>
+            // 面向对象的类定义：
+            class {{ random_name }}
+            {
+            private $name;
+            private $email;
+            public function __construct($name, $email)
+            {
+            $this-&gt;name = $name;
+            $this-&gt;email = $email;
+            }
+            public function getName()
+            {
+            return $this-&gt;name;
+            }
+            public function getEmail()
+            {
+            return $this-&gt;email;
+            }
+            public function validateEmail()
+            {
+            return filter_var($this-&gt;email, FILTER_VALIDATE_EMAIL);
+            }
+            }
+            $user = new {{ random_name }}(&quot;John Doe&quot;, &quot;john.doe@example.com&quot;);
+            if ($user-&gt;validateEmail()) {
+            echo &quot;The email address is valid.&quot;;
+            } else {
+            echo &quot;The email address is invalid.&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="44" type="class">
+        <code>
+            // 使用异常处理的文件读取：
+            class {{ random_name }}
+            {
+            public function read($filePath)
+            {
+            if (!file_exists($filePath)) {
+            throw new Exception(&quot;File not found.&quot;);
+            }
+            return file_get_contents($filePath);
+            }
+            }
+            $fileReader = new {{ random_name }}();
+            try {
+            $content = $fileReader-&gt;read(&quot;path/to/file.txt&quot;);
+            echo $content;
+            } catch (Exception $e) {
+            echo &quot;Error: &quot; . $e-&gt;getMessage();
+            }
+        </code>
+    </sample>
+    <sample id="45" type="class">
+        <code>
+            // 使用正则表达式的密码验证：
+            class {{ random_name }}
+            {
+            public function validate($password)
+            {
+            $minLength = 8;
+            $hasNumber = preg_match(&apos;/\d/&apos;, $password);
+            $hasUpper = preg_match(&apos;/[A-Z]/&apos;, $password);
+            $hasLower = preg_match(&apos;/[a-z]/&apos;, $password);
+            $hasSpecial = preg_match(&apos;/[\W_]/&apos;, $password);
+            return strlen($password) &gt;= $minLength &amp;&amp; $hasNumber &amp;&amp; $hasUpper
+            &amp;&amp; $hasLower &amp;&amp; $hasSpecial;
+            }
+            }
+            $passwordValidator = new {{ random_name }}();
+            if ($passwordValidator-&gt;validate(&quot;Example@123&quot;)) {
+            echo &quot;Password is strong.&quot;;
+            } else {
+            echo &quot;Password does not meet the requirements.&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="46" type="class">
+        <code>
+            // 数据分页：
+            class {{ random_name }}
+            {
+            private $itemsPerPage;
+            private $totalItems;
+            private $currentPage;
+            public function __construct($totalItems, $itemsPerPage = 10)
+            {
+            $this-&gt;totalItems = $totalItems;
+            $this-&gt;itemsPerPage = $itemsPerPage;
+            $this-&gt;currentPage = 1;
+            }
+            public function setcurrentPage($page)
+            {
+            $this-&gt;currentPage = max(1, $page);
+            }
+            public function getItems()
+            {
+            $offset = ($this-&gt;currentPage - 1) * $this-&gt;itemsPerPage;
+            return array_slice($this-&gt;totalItems, $offset, $this-&gt;itemsPerPage);
+            }
+            public function getTotalPages()
+            {
+            return ceil($this-&gt;totalItems / $this-&gt;itemsPerPage);
+            }
+            }
+            $totalItems = 100;
+            $paginator = new {{ random_name }}($totalItems, 10);
+            $paginator-&gt;setcurrentPage(5);
+            $pagedItems = $paginator-&gt;getItems();
+            echo &quot;Page &quot; . $pagedItems-&gt;currentPage . &quot; / &quot; .
+            $paginator-&gt;getTotalPages();
+        </code>
+    </sample>
+    <sample id="47" type="class">
+        <code>
+            // 使用Guzzle HTTP客户端的网络请求：
+            use GuzzleHttp\Client;
+            class {{ random_name }}
+            {
+            private $client;
+            public function __construct()
+            {
+            $this-&gt;client = new Client();
+            }
+            public function get($url)
+            {
+            try {
+            $response = $this-&gt;client-&gt;request(&apos;GET&apos;, $url);
+            return $response-&gt;getBody()-&gt;getContents();
+            } catch (Exception $e) {
+            return &quot;Error: &quot; . $e-&gt;getMessage();
+            }
+            }
+            }
+            $webClient = new {{ random_name }}();
+            $content = $webClient-&gt;get(&quot;http://example.com&quot;);
+            echo $content;
+        </code>
+    </sample>
+    <sample id="48" type="class">
+        <code>
+            // 简单的数据库模型：
+            class {{ random_name }}
+            {
+            private $pdo;
+            public function __construct($dsn, $user, $password)
+            {
+            try {
+            $this-&gt;pdo = new PDO($dsn, $user, $password);
+            $this-&gt;pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+            echo &quot;Connection failed: &quot; . $e-&gt;getMessage();
+            }
+            }
+            public function query($sql)
+            {
+            $stmt = $this-&gt;pdo-&gt;query($sql);
+            return $stmt-&gt;fetchAll(PDO::FETCH_ASSOC);
+            }
+            }
+            $db = new {{ random_name }}(&quot;mysql:host=localhost;dbname=testcasesqli&quot;, &quot;root&quot;,
+            &quot;123456&quot;);
+            $users = $db-&gt;query(&quot;SELECT * FROM users&quot;);
+            print_r($users);
+        </code>
+    </sample>
+    <sample id="49" type="class">
+        <code>
+            // 命令行参数解析：
+            class {{ random_name }}
+            {
+            private $arguments;
+            public function __construct($argv)
+            {
+            $this-&gt;arguments = $argv;
+            }
+            public function getOption($option)
+            {
+            foreach ($this-&gt;arguments as $arg) {
+            if (preg_match(&quot;/-$option=(.*)/&quot;, $arg, $matches)) {
+            return $matches[1];
+            }
+            }
+            return null;
+            }
+            }
+            $parser = new {{ random_name }}($argv);
+            $value = $parser-&gt;getOption(&quot;name&quot;);
+            if ($value !== null) {
+            echo &quot;Value: &quot; . $value;
+            } else {
+            echo &quot;Option &apos;name&apos; not provided.&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="50" type="simple">
+        <code>
+        // 计算两个数的和
+        // 定义两个数
+        $num1 = 5;
+        $num2 = 10;
+
+        // 计算两个数的和
+        $sum = $num1 + $num2;
+
+        // 输出结果
+        echo &quot;The sum of $num1 and $num2 is: $sum&quot;;
+                </code>
+    </sample>
+    <sample id="51" type="simple">
+        <code>
+        // 检查一个数是否为偶数
+        // 定义一个数
+        $number = 8;
+
+        // 检查该数是否为偶数
+        if ($number % 2 == 0) {
+            echo &quot;$number is an even number.&quot;;
+        } else {
+            echo &quot;$number is an odd number.&quot;;
+        }
+        </code>
+    </sample>
+    <sample id="52" type="simple">
+        <code>
+        // 遍历并输出一个数组的元素
+        // 定义一个数组
+        $fruits = array(&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;);
+
+        // 遍历并输出数组的元素
+        foreach ($fruits as $fruit) {
+            echo &quot;$fruit\n&quot;;
+        }
+
+        </code>
+    </sample>
+    <sample id="53" type="simple">
+        <code>
+        // 计算一个字符串的长度
+        // 定义一个字符串
+        $string = &quot;Hello, PHP!&quot;;
+
+        // 计算字符串的长度
+        $length = strlen($string);
+
+        // 输出结果
+        echo &quot;The length of the string is: $length&quot;;
+
+        </code>
+    </sample>
+    <sample id="54" type="simple">
+        <code>
+        // 定义并调用一个简单的函数
+        // 定义一个函数，计算两个数的和
+        function add($a, $b) {
+            return $a + $b;
+        }
+
+        // 调用该函数并输出结果
+        $result = add(3, 7);
+        echo &quot;The sum is: $result&quot;;
+
+        </code>
+    </sample>
+    <sample id="55" type="simple">
+        <code>
+        // 读取并显示一个文件的内容
+        // 定义文件路径
+        $filePath = &apos;example.txt&apos;;
+
+        // 检查文件是否存在
+        if (file_exists($filePath)) {
+            // 读取文件内容
+            $content = file_get_contents($filePath);
+
+            // 输出文件内容
+            echo &quot;File content:\n$content&quot;;
+        } else {
+            echo &quot;The file does not exist.&quot;;
+        }
+        </code>
+    </sample>
+    <sample id="56" type="simple">
+        <code>
+        // 创建并写入一个文件
+        // 定义文件路径和内容
+        $filePath = &apos;example.txt&apos;;
+        $content = &quot;Hello, this is a test file.&quot;;
+
+        // 打开文件并写入内容
+        if (file_put_contents($filePath, $content) !== false) {
+            echo &quot;File created and content written successfully.&quot;;
+        } else {
+            echo &quot;Failed to create the file or write content.&quot;;
+        }
+        </code>
+    </sample>
+</fragment>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: xyd, with XmlGrid Online XML
+Editor, http://xmlgrid.net-->
+<!-- Date: 2024-07-18 -->
+<!-- 将Sink和Sanitizer合到一起写，由于两者绑定较深，所以放在一起 -->
+<sink>
+    <sample id="1" valid="true" type="sql" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            
+            $GLOBALS[&apos;tainted&apos;]=mysql_escape_string($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            
+            $GLOBALS[&apos;tainted&apos;]=mysql_real_escape_string($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3"  sufficient="false">
+        </sanitizer>
+        <code>
+            $db=mysql_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+            mysql_select_db(&quot;testcasesqli&quot;,$db);
+            $query=&quot;select * from users where name=&apos;&quot;.$GLOBALS[&apos;tainted&apos;].&quot;&apos;&quot;;
+            $result=mysql_query($query,$db);
+            if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+            $row=mysql_fetch_array($result);
+            if($row==null){   exit(&quot;Error name or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$GLOBALS[&apos;tainted&apos;].&quot;!&lt;br /&gt; your ID:&quot;.$row[0].&quot;!&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="2" valid="false" type="sql" variable_type="number">
+        <code>
+            
+            $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;,&quot;testcasesqli&quot;);
+            if(mysqli_connect_errno()) exit(mysqli_connect_error());
+            $query=&quot;select * from users where id=?&quot;;
+            $stmt=mysqli_stmt_init($db);
+            $ret=mysqli_stmt_prepare($stmt,$query);
+            if($ret==FALSE)exit(&quot;Prepare error .....&lt;br /&gt;&quot;);
+            $ret=mysqli_stmt_bind_param($stmt,&quot;i&quot;,$GLOBALS[&apos;tainted&apos;]);
+            if($ret==FALSE)exit(&quot;Bind error .....&lt;br /&gt;&quot;);
+            $ret=mysqli_execute($stmt);
+            if($ret==FALSE)exit(&quot;Execute error ...... &lt;br /&gt;&quot;);
+            $result=mysqli_stmt_get_result($stmt);
+            $row=mysqli_fetch_row($result);
+            if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="3" valid="false" type="sql" variable_type="number">
+        <code>
+            
+            $db=new mysqli(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;,&quot;testcasesqli&quot;);
+            if(mysqli_connect_errno())exit(mysqli_connect_error());
+            $query=&quot;select * from users where id=?&quot;;
+            $stmt=$db-&gt;prepare($query);
+            if($stmt==FALSE)exit(&quot;Prepare error .... &lt;br /&gt;&quot;);
+            $ret=$stmt-&gt;bind_param(&quot;i&quot;,$GLOBALS[&apos;tainted&apos;]);
+            if($ret==FALSE)exit(&quot;Bind error .....&lt;br /&gt;&quot;);
+            $ret=$stmt-&gt;execute();
+            if($ret==FALSE)exit(&quot;Execute error ...... &lt;br /&gt;&quot;);
+            $result=$stmt-&gt;get_result();
+            if($result==null)exit(&quot;Error ID or password......&lt;br /&gt;&quot;);
+            $row=$result-&gt;fetch_row();
+            if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+
+    <sample id="4" valid="true" type="sql" variable_type="string">
+        <sanitizer id="1" sufficient="true">
+            
+            $GLOBALS[&apos;tainted&apos;]=addcslashes($GLOBALS[&apos;tainted&apos;],&quot;\\\&apos;\&quot;&quot;);
+        </sanitizer>
+        <sanitizer id="2" sufficient="true">
+            
+            $GLOBALS[&apos;tainted&apos;]=addslashes($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3" sufficient="true">
+            
+            $pattern=&quot;/[\\\\,&apos;,\&quot;]/&quot;;
+            $GLOBALS[&apos;tainted&apos;]=preg_replace($pattern,&quot;&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="4" sufficient="true">
+            
+            $GLOBALS[&apos;tainted&apos;]=str_replace(array(&quot;&apos;&quot;,&quot;\\&quot;,&quot;\&quot;&quot;),&quot;&quot;,$GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="5"  sufficient="false">
+        </sanitizer>
+        <code>
+            
+            $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+            mysqli_select_db($db,&quot;testcasesqli&quot;);
+            $query=&quot;select * from users where name=&apos;&quot;.$GLOBALS[&apos;tainted&apos;].&quot;&apos;&quot;;
+            $result=mysqli_query($db,$query);
+            if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+            $row=mysqli_fetch_array($result);
+            if($row==null){   exit(&quot;Error name or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$GLOBALS[&apos;tainted&apos;].&quot;!&lt;br /&gt; your ID:&quot;.$row[0].&quot;!&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="5" valid="false" type="sql" variable_type="string">
+        <code>
+            if($GLOBALS[&apos;tainted&apos;]==&quot;alice&quot;){
+                $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+                mysqli_select_db($db,&quot;testcasesqli&quot;);
+                $query=&quot;select * from users where name=&apos;&quot;.$GLOBALS[&apos;tainted&apos;].&quot;&apos;&quot;;
+                $result=mysqli_query($db,$query);
+                if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+                $row=mysqli_fetch_array($result);
+                if($row==null){   exit(&quot;Error name.&lt;br /&gt;&quot;); }
+                print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$GLOBALS[&apos;tainted&apos;].&quot;!&lt;br /&gt; your ID:&quot;.$row[0].&quot;!&lt;br /&gt;&quot;);
+            }else{
+                print(&quot;Error name!!&lt;br /&gt;&quot;);
+                }
+        </code>
+    </sample>
+
+    <sample id="6" valid="true" type="sql" variable_type="number">
+        <sanitizer id="1" sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=filter_var($GLOBALS[&apos;tainted&apos;],FILTER_SANITIZE_NUMBER_INT);
+        </sanitizer>
+        <sanitizer id="2"  sufficient="false">
+            $GLOBALS[&apos;tainted&apos;]=addslashes($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="3"  sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
+        </sanitizer>
+        <sanitizer id="4"  sufficient="true">
+            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
+        </sanitizer>
+        <sanitizer id="5" sufficient="true">
+            settype($GLOBALS[&apos;tainted&apos;],&quot;int&quot;);
+        </sanitizer>
+        <sanitizer id="6" sufficient="false">
+        </sanitizer>
+        <code>
+            $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+            mysqli_select_db($db,&quot;testcasesqli&quot;);
+            $query=&quot;select * from users where id={$GLOBALS[&apos;tainted&apos;]}&quot;;
+            $result=mysqli_query($db,$query);
+            if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+            $row=mysqli_fetch_array($result);
+            if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="7" valid="false" type="sql" variable_type="number">
+        <code>
+            if($GLOBALS[&apos;tainted&apos;]==="1001"){
+                $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+                mysqli_select_db($db,&quot;testcasesqli&quot;);
+                $query=&quot;select * from users where id={$GLOBALS[&apos;tainted&apos;]}&quot;;
+                $result=mysqli_query($db,$query);
+                if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+                $row=mysqli_fetch_array($result);
+                if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+                print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+            }else{
+                print(&quot;Error ID !&quot;);
+            }
+        </code>
+    </sample>
+
+    <sample id="8" valid="false" type="sql" variable_type="string">
+        <code>
+            
+            if(in_array($GLOBALS[&apos;tainted&apos;],array(&quot;alice&quot;,&quot;bob&quot;,&quot;test&quot;))){
+                $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+                mysqli_select_db($db,&quot;testcasesqli&quot;);
+                $query=&quot;select * from users where name=&apos;&quot;.$GLOBALS[&apos;tainted&apos;].&quot;&apos;&quot;;
+                $result=mysqli_query($db,$query);
+                if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+                $row=mysqli_fetch_array($result);
+                if($row==null){   exit(&quot;Error name or password.&lt;br /&gt;&quot;); }
+                print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$GLOBALS[&apos;tainted&apos;].&quot;!&lt;br /&gt; your ID:&quot;.$row[0].&quot;!&lt;br /&gt;&quot;);
+            }else{
+                print(&quot;Error name!!&lt;br /&gt;&quot;);
+            }
+        </code>
+    </sample>
+
+
+    <sample id="9" valid="false" type="sql" variable_type="number">
+        <code>
+            
+            if(is_numeric($GLOBALS[&apos;tainted&apos;])){
+                $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+                mysqli_select_db($db,&quot;testcasesqli&quot;);
+                $query=&quot;select * from users where id={$GLOBALS[&apos;tainted&apos;]}&quot;;
+                $result=mysqli_query($db,$query);
+                if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+                $row=mysqli_fetch_array($result);
+                if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+                print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+            }else{
+                print(&quot;Error ID !&quot;);
+            }
+        </code>
+    </sample>
+
+
+
+    <sample id="10" valid="false" type="sql" variable_type="number">
+        <code>
+            
+            $pattern=&quot;/^[0-9]+$/&quot;;
+            if(preg_match($pattern,$GLOBALS[&apos;tainted&apos;])){
+                $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+                mysqli_select_db($db,&quot;testcasesqli&quot;);
+                $query=&quot;select * from users where id={$GLOBALS[&apos;tainted&apos;]}&quot;;
+                $result=mysqli_query($db,$query);
+                if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+                $row=mysqli_fetch_array($result);
+                if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+                print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+            }else{
+                print(&quot;Error ID.&quot;);
+            }
+        </code>
+    </sample>
+
+
+    <sample id="11" valid="false" type="sql" variable_type="string">
+        <code>
+            
+            switch($GLOBALS[&apos;tainted&apos;]){
+                case &quot;alice&quot;:
+                case &quot;bob&quot;:
+                case &quot;test&quot;:
+                  $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+                  mysqli_select_db($db,&quot;testcasesqli&quot;);
+                  $query=&quot;select * from users where name=&apos;&quot;.$GLOBALS[&apos;tainted&apos;].&quot;&apos;&quot;;
+                  $result=mysqli_query($db,$query);
+                  if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+                  $row=mysqli_fetch_array($result);
+                  if($row==null){   exit(&quot;Error name or password.&lt;br /&gt;&quot;); }
+                  print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$GLOBALS[&apos;tainted&apos;].&quot;!&lt;br /&gt; your ID:&quot;.$row[0].&quot;!&lt;br /&gt;&quot;);
+                  break;
+                default:
+                  print(&quot;Error name!!&lt;br /&gt;&quot;);
+            }
+        </code>
+    </sample>
+
+    <sample id="12" valid="false" type="sql" variable_type="number">
+        <code>
+            
+            $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;,&quot;testcasesqli&quot;);
+            if(mysqli_connect_errno()) exit(mysqli_connect_error());
+            $query=&quot;select * from users where id=?&quot;;
+            $stmt=mysqli_stmt_init($db);
+            $ret=mysqli_stmt_prepare($stmt,$query);
+            if($ret==FALSE)exit(&quot;Prepare error .....&lt;br /&gt;&quot;);
+            $ret=mysqli_stmt_bind_param($stmt,&quot;i&quot;,$GLOBALS[&apos;tainted&apos;]);
+            if($ret==FALSE)exit(&quot;Bind error .....&lt;br /&gt;&quot;);
+            $ret=mysqli_stmt_execute($stmt);
+            if($ret==FALSE)exit(&quot;Execute error ...... &lt;br /&gt;&quot;);
+            $result=mysqli_stmt_get_result($stmt);
+            $row=mysqli_fetch_row($result);
+            if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="13" valid="false" type="sql" variable_type="number">
+        <code>
+            
+            $conn=odbc_connect(&quot;DRIVER={MySQL ODBC 5.1 Driver};server=127.0.0.1;database=testcasesqli;&quot;,&apos;root&apos;,&apos;123456&apos;);
+            if($conn==FALSE) exit(odbc_errormsg());
+            $query=&quot;select * from users where id=?&quot;;
+            $stmt=odbc_prepare($conn,$query);
+            $ret=odbc_execute($stmt,array($GLOBALS[&apos;tainted&apos;]));
+            if($ret==FALSE)exit(odbc_errormsg());
+            $row=odbc_fetch_array($stmt);
+            if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[&apos;name&apos;].&quot;&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="14" valid="false" type="sql" variable_type="number">
+        <code>
+            
+            $db=new PDO(&quot;mysql:dbname=testcasesqli;host=127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+            $stmt=$db-&gt;prepare(&quot;select * from users where id=?&quot;);
+            $stmt-&gt;bindParam(1,$GLOBALS[&apos;tainted&apos;],PDO::PARAM_INT);
+            $stmt-&gt;execute();
+            $row=$stmt-&gt;fetch(PDO::FETCH_NUM);
+            if($row==null){   exit(&quot;Error ID or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$row[1].&quot;&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+    <sample id="15" valid="false" type="sql" variable_type="string">
+
+        <code>
+            
+            $db=mysqli_connect(&quot;127.0.0.1&quot;,&quot;root&quot;,&quot;123456&quot;);
+            mysqli_select_db($db,&quot;testcasesqli&quot;);
+            $GLOBALS[&apos;tainted&apos;]=mysqli_real_escape_string($db,$GLOBALS[&apos;tainted&apos;]);
+            $query=&quot;select * from users where name=&apos;&quot;.$GLOBALS[&apos;tainted&apos;].&quot;&apos;&quot;;
+            $result=mysqli_query($db,$query);
+            if($result==false){    exit(&quot;Database error !&lt;br /&gt;&quot;); }
+            $row=mysqli_fetch_array($result);
+            if($row==null){   exit(&quot;Error name or password.&lt;br /&gt;&quot;); }
+            print(&quot;Login successfully!&lt;br /&gt;welcome,&quot;.$GLOBALS[&apos;tainted&apos;].&quot;!&lt;br /&gt; your ID:&quot;.$row[0].&quot;!&lt;br /&gt;&quot;);
+        </code>
+    </sample>
+
+</sink>

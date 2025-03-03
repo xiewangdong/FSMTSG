@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by: xyd, with XmlGrid Online XML
+Editor, http://xmlgrid.net-->
+<!-- Date: 2024-07-18 -->
+<decorator>
+    <sample id="1" isTop="false" type="simple">
+        <code>
+            if(isset($GLOBALS[&apos;tainted&apos;])){
+            {{ placeholder }}
+            }
+        </code>
+    </sample>
+    <sample id="2" isTop="false" type="simple">
+        <code>if(&apos;a&apos;==&apos;a&apos;){
+            {{ placeholder }}
+            }
+        </code>
+    </sample>
+    <sample id="3" isTop="false" type="simple">
+        <code>
+            if (2==(1+1)) {
+            {{ placeholder }}
+            }
+        </code>
+    </sample>
+    <sample id="4" isTop="false" type="simple">
+        <code>
+            $awuei_ddikf_eirhdjf = &apos;3&apos;;
+            switch ($awuei_ddikf_eirhdjf) {
+            case &apos;1&apos;:
+            # code...
+            break;
+            case &apos;2&apos;:
+            # code...
+            break;
+            case &apos;3&apos;:
+            {{ placeholder }}
+            break;
+            default:
+            # code...
+            break;
+            }
+
+        </code>
+    </sample>
+    <sample id="5" isTop="false" type="simple">
+        <code>
+            if (2&lt;3) {
+            {{ placeholder }}
+            }
+        </code>
+    </sample>
+    <sample id="6" isTop="false" type="simple">
+        <code>
+            $a8e7_ueiejrmdnbruU = 10;
+            while ($a8e7_ueiejrmdnbruU &lt;= 10) {
+            {{ placeholder }}
+            $a8e7_ueiejrmdnbruU++;
+            }
+        </code>
+    </sample>
+    <sample id="7" isTop="false" type="simple">
+        <code>
+            for ($i = 1; ; $i++) {
+            if ($i &gt; 1) {
+            break;
+            }
+            {{ placeholder }}
+            }
+        </code>
+    </sample>
+    <sample id="8" isTop="false" type="simple">
+        <code>
+            for ($i = 1; $i &lt;= 1; $i++) {
+            {{ placeholder }}
+            }
+        </code>
+    </sample>
+    <sample id="9" isTop="false" type="simple">
+        <code>
+            $aUYi9_0Ujk = 10;
+            $b36YujdWSaQ = 5;
+            if ($aUYi9_0Ujk &gt; $b36YujdWSaQ) {
+            {{ placeholder }}
+            } elseif ($aUYi9_0Ujk == $b36YujdWSaQ) {
+            echo &quot;aUYi9_0Ujk is equal to b36YujdWSaQ&quot;;
+            } else {
+            echo &quot;aUYi9_0Ujk is smaller than b36YujdWSaQ&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="10" isTop="false" type="simple">
+        <code>
+            $idueww4_EWr = 0;
+            do {
+            {{ placeholder }}
+            $idueww4_EWr--;
+            } while ($idueww4_EWr &gt; 0);
+        </code>
+    </sample>
+    <sample id="11" isTop="false" type="simple">
+        <code>
+            do {
+            {{ placeholder }}
+            break;
+            } while(0);
+        </code>
+    </sample>
+    <sample id="12" isTop="false" type="simple">
+        <code>
+            $arrYU43E_ty = [&apos;zero&apos;, &apos;one&apos;];
+            foreach ($arrYU43E_ty as $key =&gt; $value) {
+            if (0 === ($key % 2)) {
+            continue;
+            }
+            {{ placeholder }}
+            }
+        </code>
+    </sample>
+    <sample id="13" isTop="true" type="function">
+        <code>
+            // 登录验证装饰：
+            function {{ random_name }}($username, $password) {
+            
+
+            // 验证用户名和密码
+            if ($username === &quot;admin&quot; &amp;&amp; $password === &quot;secret&quot;) {
+            {{ placeholder }}
+            echo &quot;Login successful!&lt;br&gt;&quot;;
+            } else {
+            echo &quot;Login failed.&lt;br&gt;&quot;;
+            }
+            }
+
+            {{ random_name }}(&quot;admin&quot;, &quot;secret&quot;);
+
+        </code>
+    </sample>
+    <sample id="14" isTop="true" type="function">
+        <code>
+            // 用户注册装饰：
+
+            function {{ random_name }}($username, $password) {
+            
+
+            // 检查用户名是否已存在
+            if (!userExists_{{ random_name }}($username)) {
+            {{ placeholder }}
+            createUser_{{ random_name }}($username, $password);
+            echo &quot;User registered successfully!&lt;br&gt;&quot;;
+            } else {
+            echo &quot;Username already exists.&lt;br&gt;&quot;;
+            }
+            }
+
+            function userExists_{{ random_name }}($username) {
+            // 模拟检查用户名是否存在的逻辑
+            return false;
+            }
+
+            function createUser_{{ random_name }}($username, $password) {
+            // 模拟创建用户的逻辑
+            }
+
+            {{ random_name }}(&quot;newuser&quot;, &quot;password123&quot;);
+
+        </code>
+    </sample>
+    <sample id="15" isTop="true" type="function">
+        <code>
+
+            // 文件处理装饰：
+
+            function {{ random_name }}($filePath) {
+            
+
+            if (file_exists($filePath)) {
+            {{ placeholder }}
+            $content = file_get_contents($filePath);
+            echo &quot;File content:&lt;br&gt;&quot; . $content;
+            } else {
+            echo &quot;File does not exist.&lt;br&gt;&quot;;
+            }
+            }
+
+            {{ random_name }}(&quot;example.txt&quot;);
+
+        </code>
+    </sample>
+    <sample id="16" isTop="true" type="function">
+        <code>
+
+            // 数据验证装饰：
+
+            function {{ random_name }}($data) {
+            
+
+            if (is_array($data)) {
+            {{ placeholder }}
+            echo &quot;Data is valid.&lt;br&gt;&quot;;
+            } else {
+            echo &quot;Data is invalid.&lt;br&gt;&quot;;
+            }
+            }
+
+            {{ random_name }}([&quot;key&quot; =&gt; &quot;value&quot;]);
+
+        </code>
+    </sample>
+    <sample id="17" isTop="true" type="function">
+        <code>
+
+            // 邮件发送装饰：
+
+            function {{ random_name }}($to, $subject, $message) {
+            
+
+            if (filter_var($to, FILTER_VALIDATE_EMAIL)) {
+            {{ placeholder }}
+            mail($to, $subject, $message);
+            echo &quot;Email sent successfully!&lt;br&gt;&quot;;
+            } else {
+            echo &quot;Invalid email address.&lt;br&gt;&quot;;
+            }
+            }
+
+            {{ random_name }}(&quot;user@example.com&quot;, &quot;Subject&quot;, &quot;Hello!&quot;);
+
+        </code>
+    </sample>
+    <sample id="18" isTop="true" type="function">
+        <code>
+
+            // 权限检查装饰：
+
+            function {{ random_name }}($permission) {
+            
+
+            if ($permission === &quot;access_granted&quot;) {
+            {{ placeholder }}
+            echo &quot;Permission granted.&lt;br&gt;&quot;;
+            } else {
+            echo &quot;Access denied.&lt;br&gt;&quot;;
+            }
+            }
+
+            {{ random_name }}(&quot;access_granted&quot;);
+
+
+        </code>
+    </sample>
+    <sample id="19" isTop="true" type="function">
+        <code>
+            // 购物车添加商品装饰：
+
+            function {{ random_name }}($product, $quantity) {
+            
+
+            if ($quantity &gt; 0) {
+            {{ placeholder }}
+            $cart[] = [&apos;product&apos; =&gt; $product, &apos;quantity&apos; =&gt; $quantity];
+            echo &quot;Product added to cart.&lt;br&gt;&quot;;
+            } else {
+            echo &quot;Invalid quantity.&lt;br&gt;&quot;;
+            }
+            }
+
+            {{ random_name }}(&quot;Product1&quot;, 2);
+
+        </code>
+    </sample>
+    <sample id="20" isTop="true" type="function">
+        <code>
+
+            // 用户反馈处理装饰：
+
+            function {{ random_name }}($feedback) {
+            
+
+            if (strlen($feedback) &gt; 0) {
+            {{ placeholder }}
+            logFeedback_{{ random_name }}($feedback);
+            echo &quot;Feedback recorded.&lt;br&gt;&quot;;
+            } else {
+            echo &quot;No feedback provided.&lt;br&gt;&quot;;
+            }
+            }
+
+            function logFeedback_{{ random_name }}($feedback) {
+            // 模拟记录反馈的逻辑
+            }
+
+            {{ random_name }}(&quot;This is great!&quot;);
+
+        </code>
+    </sample>
+    <sample id="21" isTop="true" type="function">
+        <code>
+
+            // 检查电子邮件地址是否有效
+            function {{ random_name }}($email) {
+            
+
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            {{ placeholder }}
+            // 嵌入位置：代码片段A将在这里执行
+            echo &quot;The email address is valid.&quot;;
+            } else {
+            echo &quot;The email address is not valid.&quot;;
+            }
+            }
+            {{ random_name }}(&quot;user@example.com&quot;);
+
+        </code>
+    </sample>
+    <sample id="22" isTop="true" type="function">
+        <code>
+
+            // 简单的CRUD操作
+            function {{ random_name }}($data) {
+            
+
+            // 假设这是一个数据库插入操作
+            if (is_array($data) &amp;&amp; !empty($data)) {
+            {{ placeholder }}
+
+            echo &quot;Record created successfully.&quot;;
+            } else {
+            echo &quot;Invalid data provided.&quot;;
+            }
+            }
+            {{ random_name }}([&quot;name&quot; =&gt; &quot;John&quot;, &quot;email&quot; =&gt;
+            &quot;john@example.com&quot;]);
+        </code>
+    </sample>
+    <sample id="23" isTop="true" type="function">
+        <code>
+
+            // 检查日期格式
+            function {{ random_name }}($date): bool {
+
+            {{ placeholder }}
+            $d = DateTime::createFromFormat(&apos;Y-m-d&apos;, $date);
+            return $d &amp;&amp; $d-&gt;format(&apos;Y-m-d&apos;) === $date;
+            }
+            {{ random_name }}(&quot;2023-04-01&quot;);
+
+        </code>
+    </sample>
+    <sample id="24" isTop="true" type="function">
+        <code>
+
+
+            // 用户权限检查
+            function {{ random_name }}($permission) {
+
+            $allowedPermissions = [&quot;read&quot;, &quot;write&quot;, &quot;execute&quot;];
+
+            if (in_array($permission, $allowedPermissions)) {
+            {{ placeholder }}
+
+            echo &quot;Permission granted.&quot;;
+            } else {
+            echo &quot;Permission denied.&quot;;
+            }
+            }
+            {{ random_name }}(&quot;read&quot;);
+
+        </code>
+    </sample>
+    <sample id="25" isTop="true" type="function">
+        <code>
+
+            // 发送HTTP请求
+            function {{ random_name }}($url) {
+            
+
+            if (filter_var($url, FILTER_VALIDATE_URL)) {
+            {{ placeholder }}
+
+            $contents = file_get_contents($url);
+            echo &quot;HTTP request successful. Response: &quot; . $contents;
+            } else {
+            echo &quot;Invalid URL.&quot;;
+            }
+            }
+            {{ random_name }}(&quot;http://example.com&quot;);
+
+
+        </code>
+    </sample>
+    <sample id="26" isTop="true" type="function">
+        <code>
+
+            // 检查文件是否可读
+            function {{ random_name }}($filePath) {
+            
+
+            if (is_readable($filePath)) {
+            {{ placeholder }}
+            echo &quot;File is readable.&quot;;
+            } else {
+            {{ placeholder }}
+            echo &quot;File is not readable.&quot;;
+            }
+            }
+            {{ random_name }}(&quot;/path/to/file.txt&quot;);
+
+        </code>
+    </sample>
+    <sample id="27" isTop="true" type="function">
+        <code>
+
+            // 计算数组中数字的总和
+            function {{ random_name }}(array $numbers) {
+            
+
+            if (count($numbers) &gt; 0) {
+            {{ placeholder }}
+
+            $sum = array_sum($numbers);
+            echo &quot;The sum of the array is: &quot; . $sum;
+            } else {
+            echo &quot;The array is empty.&quot;;
+            }
+            }
+            {{ random_name }}([1, 2, 3, 4, 5]);
+
+
+        </code>
+    </sample>
+    <sample id="28" isTop="true" type="function">
+        <code>
+
+            // 检查用户输入
+            function {{ random_name }}($input) {
+            
+
+            if (trim($input) !== &quot;&quot;) {
+            {{ placeholder }}
+
+            echo &quot;Input is valid.&quot;;
+            } else {
+            echo &quot;Input is empty.&quot;;
+            }
+            }
+            {{ random_name }}(&quot;some input&quot;);
+
+        </code>
+    </sample>
+    <sample id="29" isTop="true" type="function">
+        <code>
+
+            // 用户登录验证
+            function {{ random_name }}($username, $password) {
+            
+
+            // 模拟数据库中的用户名和密码
+            $dbUsername = &quot;root&quot;;
+            $dbPassword = &quot;123456&quot;;
+
+            if ($username === $dbUsername &amp;&amp; $password === $dbPassword) {
+            {{ placeholder }}
+
+            echo &quot;User logged in successfully.&quot;;
+            } else {
+            echo &quot;Invalid username or password.&quot;;
+            }
+            }
+            {{ random_name }}(&quot;root&quot;, &quot;123456&quot;);
+        </code>
+    </sample>
+    <sample id="30" isTop="true" type="class">
+        <code>
+            class {{ random_name }} {
+            private $users;
+            public function __construct() {
+            $this-&gt;users = [&apos;Alice&apos;];
+            }
+            public function processUsers() {
+            foreach ($this-&gt;users as $user) {
+            // 嵌入位置：代码片段A将在这里执行
+            $this-&gt;performAction($user);
+
+            if ($user === &apos;Alice&apos;) {
+            // 额外的逻辑，增加了圈复杂度
+            $this-&gt;specialTreatment($user);
+            }
+            }
+            }
+            private function specialTreatment($user) {
+            // 对特定用户执行特殊处理
+            echo &quot;Special treatment for user: &quot; . $user;
+            }
+    private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+            public function performAction($user) {
+            // 代码片段A被嵌入到这里
+            {{ placeholder }}
+            }
+            }
+            // 新生成的代码片段C
+            $userProcessor = new {{ random_name }}();
+            $userProcessor-&gt;processUsers();
+        </code>
+    </sample>
+    <sample id="31" isTop="true" type="class">
+        <code>
+            // 配置加载类：
+class {{ random_name }} {
+    private $config;
+
+    public function __construct($filePath) {
+        $this-&gt;config = $this-&gt;loadConfig($filePath);
+    }
+
+    public function getConfigValue($key) {
+        // 嵌入位置：代码片段A将在这里执行一次
+                   {{ placeholder }}
+        if ($this-&gt;config) {
+            echo &quot;Config file loaded successfully.\n&quot;;
+            // 代码片段A
+            return $this-&gt;config[$key] ? $this-&gt;config[$key]:&apos;Default Value&apos;;
+        } else {
+            echo &quot;Failed to load config file.\n&quot;;
+            return null;
+        }
+    }
+        private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+
+    private function loadConfig($filePath) {
+        if (file_exists($filePath)) {
+            return include $filePath;
+        }
+        return null;
+    }
+
+    private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+}
+// 使用
+$configLoader = new {{ random_name }}(&apos;./config.php&apos;);
+$value = $configLoader-&gt;getConfigValue(&apos;db_host&apos;);
+        </code>
+    </sample>
+    <sample id="32" isTop="true" type="class">
+        <code>
+            // 用户注册验证类：
+            class {{ random_name }} {
+                private $userExists;
+            
+                public function __construct($username) {
+                    $this-&gt;userExists = $this-&gt;checkUserExists($username);
+                }
+            
+                public function registerUser() {
+                    // 嵌入位置：代码片段A将在这里执行一次
+                        {{ placeholder }}
+            
+                    if (!$this-&gt;userExists) {
+                        echo &quot;User does not exist, registering new user.\n&quot;;
+                        // 代码片段A
+                        $this-&gt;createUser();
+                    } else {
+                        echo &quot;User already exists.\n&quot;;
+                    }
+                }
+            
+                private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                private function createUser() {
+                    // 注册新用户逻辑
+                    echo &quot;New user registered.\n&quot;;
+                }
+            
+                private function checkUserExists($username) {
+                    // 检查用户是否存在的逻辑
+                    return file_exists(&quot;user_{$username}.txt&quot;);
+                }
+                
+                    private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+
+            }
+            // 使用
+            $userReg = new {{ random_name }}(&apos;johndoe&apos;);
+            $userReg-&gt;registerUser();
+        </code>
+    </sample>
+    <sample id="33" isTop="true" type="class">
+        <code>
+            // 文件处理器类：
+            class {{ random_name }} {
+                private $fileContent;
+            
+                public function __construct($filePath) {
+                    $this-&gt;fileContent = $this-&gt;readFile($filePath);
+                }
+            
+                public function processFile() {
+                    // 嵌入位置：代码片段A将在这里执行一次
+                        {{ placeholder }}
+            
+                    if ($this-&gt;fileContent !== false) {
+                        echo &quot;File read successfully.\n&quot;;
+                        // 代码片段A
+                        $this-&gt;analyzeContent();
+                    } else {
+                        echo &quot;Failed to read file.\n&quot;;
+                    }
+                }
+                    private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+            
+                private function readFile($filePath) {
+                    if (file_exists($filePath)) {
+                        return file_get_contents($filePath);
+                    }
+                    return false;
+                }
+            
+                private function analyzeContent() {
+                    // 分析文件内容
+                    echo &quot;Analyzing file content.\n&quot;;
+                }
+            }
+            // 使用
+            $fileProcessor = new {{ random_name }}(&apos;example.txt&apos;);
+            $fileProcessor-&gt;processFile();
+        </code>
+    </sample>
+    <sample id="34" isTop="true" type="class">
+        <code>
+            // 代码片段B
+            class {{ random_name }} {
+                private $executed = false;
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function execute($a, $b) {
+                    if (!$this-&gt;executed) {
+                        // 嵌入代码片段A
+                        {{ placeholder }}
+                        
+                        $this-&gt;executed = true;
+                    } else {
+                        echo &quot;Code A has already been executed.&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $decorator = new {{ random_name }}();
+            $decorator-&gt;execute(3, 4); // 输出: Result: 7
+            $decorator-&gt;execute(5, 6); // 输出: Code A has already been executed.
+        </code>
+    </sample>
+    <sample id="35" isTop="true" type="class">
+        <code>
+            // 带有缓存机制的类
+            class {{ random_name }} {
+                private $cache = [];
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function calculate($a, $b) {
+                    $key = &quot;1&quot;;
+                    if (!isset($this-&gt;cache[$key])) {
+                        // 嵌入代码片段A
+                        {{ placeholder }}
+            $result = $a + $b;
+                        echo &quot;Result: $result\n&quot;;
+                        $this-&gt;cache[$key] = true;
+                    } else {
+                        echo &quot;Calculation for $a and $b has already been executed.\n&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $calculator = new {{ random_name }}();
+            $calculator-&gt;calculate(3, 4); // 输出: Result: 7
+            $calculator-&gt;calculate(3, 4); // 输出: Calculation for 3 and 4 has already been executed.
+        </code>
+    </sample>
+    <sample id="36" isTop="true" type="class">
+        <code>
+            // 带有时间戳检查的类
+            class {{ random_name }} {
+                private $lastExecuted = null;
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function checkAndExecute($a, $b) {
+                    if ($this-&gt;lastExecuted === null || time() - $this-&gt;lastExecuted &gt; 3600) {
+                        // 嵌入代码片段A
+                                    {{ placeholder }}
+            $result = $a + $b;
+                        echo &quot;Result: $result\n&quot;;
+                        $this-&gt;lastExecuted = time();
+                    } else {
+                        echo &quot;Code A has already been executed within the last minute.\n&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $checker = new {{ random_name }}();
+            $checker-&gt;checkAndExecute(3, 4); // 输出: Result: 7
+            $checker-&gt;checkAndExecute(7, 8); // 输出: Code A has already been executed within the last minute.
+        </code>
+    </sample>
+    <sample id="37" isTop="true" type="class">
+        <code>
+            // 带有计数器的类
+            class {{ random_name }} {
+                private $count = 0;
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function executeOnce($a, $b) {
+                    if ($this-&gt;count &lt; 1) {
+                        // 嵌入代码片段A
+                                    {{ placeholder }}
+            $result = $a + $b;
+                        echo &quot;Result: $result\n&quot;;
+                        $this-&gt;count++;
+                    } else {
+                        echo &quot;Code A has already been executed.\n&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $counter = new {{ random_name }}();
+            $counter-&gt;executeOnce(3, 4); // 输出: Result: 7
+            $counter-&gt;executeOnce(5, 6); // 输出: Code A has already been executed.
+        </code>
+    </sample>
+    <sample id="38" isTop="true" type="class">
+        <code>
+            // 用户登录日志记录
+            class {{ random_name }} {
+                private $loggedUsers = [];
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function logUserLogin($userId, callable $codeA) {
+                    if (!isset($this-&gt;loggedUsers[$userId])) {
+                        // 嵌入代码片段A的位置
+                        $codeA();
+                        $this-&gt;loggedUsers[$userId] = true;
+                    } else {
+                        echo &quot;User with ID $userId has already been logged.\n&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $logger = new {{ random_name }}();
+            $logger-&gt;logUserLogin(1, function() {
+                // 代码片段A的内容
+            {{ placeholder }}
+                echo &quot;Logging user login.\n&quot;;
+            });
+        </code>
+    </sample>
+    <sample id="39" isTop="true" type="class">
+        <code>
+            // 订单处理
+            class {{ random_name }} {
+                private $processedOrders = [];
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function processOrder($orderId, callable $codeA) {
+                    if (!isset($this-&gt;processedOrders[$orderId])) {
+                        // 嵌入代码片段A的位置
+                        $codeA();
+                        $this-&gt;processedOrders[$orderId] = true;
+                    } else {
+                        echo &quot;Order with ID $orderId has already been processed.\n&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $processor = new {{ random_name }}();
+            $processor-&gt;processOrder(123, function() {
+                {{ placeholder }}
+                echo &quot;Processing order.\n&quot;;
+            });
+        </code>
+    </sample>
+    <sample id="40" isTop="true" type="class">
+        <code>
+            // 任务调度
+            class {{ random_name }} {
+                private $scheduledTasks = [];
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function scheduleTask($taskId, callable $codeA) {
+                    if (!isset($this-&gt;scheduledTasks[$taskId])) {
+                        // 嵌入代码片段A的位置
+                        $codeA();
+                        $this-&gt;scheduledTasks[$taskId] = true;
+                    } else {
+                        echo &quot;Task with ID $taskId has already been scheduled.\n&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $scheduler = new {{ random_name }}();
+            $scheduler-&gt;scheduleTask(456, function() {
+                // 代码片段A的内容
+            {{ placeholder }}
+                echo &quot;Scheduling task.\n&quot;;
+            });
+        </code>
+    </sample>
+    <sample id="41" isTop="true" type="class">
+        <code>
+            // 文件上传处理
+            class {{ random_name }} {
+                private $processedFiles = [];
+            
+                private function checkConfig_eerdfds8($config) {
+        // 校验配置项的合法性
+        return true;
+    }
+    private function isFunction_ddfefidu($user) {
+        // 模拟检查用户是否具有某些功能的逻辑
+        $a = 1;
+        $b = 2;
+        $c = $a + $b;
+        return true;
+    }
+
+                public function processFile($fileName, callable $codeA) {
+                    if (!isset($this-&gt;processedFiles[$fileName])) {
+                        // 嵌入代码片段A的位置
+                        $codeA();
+                        $this-&gt;processedFiles[$fileName] = true;
+                    } else {
+                        echo &quot;File &apos;$fileName&apos; has already been processed.\n&quot;;
+                    }
+                }
+            }
+            
+            // 使用示例
+            $processor = new {{ random_name }}();
+            $processor-&gt;processFile(&apos;example.txt&apos;, function() {
+                // 代码片段A的内容
+            {{ placeholder }}
+                echo &quot;Processing file upload.\n&quot;;
+            });
+        </code>
+    </sample>
+    <sample id="42" isTop="false" type="simple">
+        <code>
+            $flag = false;
+            if ($flag) {
+                // A代码片段将嵌入到这里
+            } else {
+                $flag = true;
+                if ($flag) {
+                    // A代码片段将嵌入到这里
+                   {{ placeholder }}
+                }
+            }
+        </code>
+    </sample>
+    <sample id="43" isTop="false" type="simple">
+        <code>
+            // 使用嵌套条件语句
+            $flag = false;
+            if ($flag) {
+                // A代码片段将嵌入到这里
+            } else {
+                $flag = true;
+                if ($flag) {
+                    // A代码片段将嵌入到这里
+                {{ placeholder }}
+                }
+            }
+        </code>
+    </sample>
+    <sample id="44" isTop="false" type="simple">
+        <code>
+            // 使用switch语句
+            $flag = 1;
+            switch ($flag) {
+                case 0:
+                    // A代码片段将嵌入到这里
+                    break;
+                default:
+                    $flag = 2;
+                    switch ($flag) {
+                        case 3:
+                            // A代码片段将嵌入到这里
+                            break;
+                        default:
+                            {{ placeholder }}
+                    }
+            }
+        </code>
+    </sample>
+    <sample id="45" isTop="false" type="simple">
+        <code>
+            // 使用while循环和break语句
+            $flag = true;
+            while ($flag) {
+                if (!$flag) {
+                    // A代码片段将嵌入到这里
+                } else {
+                    $flag = false;
+                    while (!$flag) {
+                        // A代码片段将嵌入到这里
+                        {{ placeholder }}
+                        break;
+                    }
+                }
+                break;
+            }
+        </code>
+    </sample>
+    <sample id="46" isTop="false" type="simple">
+        <code>
+            // 使用try-catch语句
+            $flag = true;
+            try {
+                if (!$flag) {
+                    // A代码片段将嵌入到这里
+                } else {
+                    throw new Exception(&quot;Flag is true&quot;);
+                }
+            } catch (Exception $e) {
+                try {
+                    if ($e-&gt;getMessage() == &quot;Flag is true&quot;) {
+                        // A代码片段将嵌入到这里
+                        {{ placeholder }}
+                    }
+                } catch (Exception $e) {
+                    // Handle any other exceptions
+                }
+            }
+        </code>
+    </sample>
+    <sample id="47" isTop="false" type="simple">
+        <code>
+            // 用户登录状态检查：
+            $username = &quot;admin&quot;;
+            $password = &quot;password123&quot;;
+            $isLoggedIn = true; // 模拟用户登录状态
+            if ($isLoggedIn) {
+                // 嵌入位置：代码片段A将在这里执行
+                echo &quot;Welcome, &quot; . htmlspecialchars($username) . &quot;!\n&quot;;
+                {{ placeholder }}
+            } else {
+                echo &quot;Please log in to continue.\n&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="48" isTop="false" type="simple">
+        <code>
+            // 订单处理状态：
+            $orderStatus = &quot;completed&quot;; // 订单状态
+            $paymentReceived = true; // 支付状态
+            if ($orderStatus === &quot;completed&quot;) {
+                if ($paymentReceived) {
+                    // 嵌入位置：代码片段A将在这里执行
+                    echo &quot;Order processed successfully.\n&quot;;
+                    {{ placeholder }}
+                } else {
+                    echo &quot;Payment not received for the order.\n&quot;;
+                }
+            } else {
+                echo &quot;Order is not completed.\n&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="49" isTop="false" type="simple">
+        <code>
+            // 数据验证：
+            $data = &quot;validData&quot;; // 模拟输入数据
+            $isValid = true; // 数据有效性
+            if ($isValid) {
+                // 嵌入位置：代码片段A将在这里执行
+                echo &quot;Data is valid.\n&quot;;
+                {{ placeholder }}
+            } else {
+                echo &quot;Data is invalid.\n&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="50" isTop="false" type="simple">
+        <code>
+            //文件上传检查：
+            $fileUploaded = true; // 文件上传状态
+            $filePath = &quot;uploads/file.txt&quot;; // 文件路径
+            if ($fileUploaded) {
+                // 嵌入位置：代码片段A将在这里执行
+                echo &quot;File uploaded successfully.\n&quot;;
+                {{ placeholder }}
+            } else {
+                echo &quot;File upload failed.\n&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="51" isTop="false" type="simple">
+        <code>
+            // 用户角色检查：
+            $userRole = &quot;editor&quot;; // 用户角色
+            if ($userRole === &quot;admin&quot;) {
+                // 嵌入位置：代码片段A将在这里执行
+                echo &quot;Admin access granted.\n&quot;;
+                
+            } elseif ($userRole === &quot;editor&quot;) {
+                echo &quot;Editor access granted.\n&quot;;
+                // 嵌入位置：代码片段A将在这里执行
+                {{ placeholder }}
+            } else {
+                echo &quot;Access denied.\n&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="52" isTop="false" type="simple">
+        <code>
+            // 库存检查：
+            $itemQuantity = 5; // 库存数量
+            $threshold = 10; // 库存阈值
+            if ($itemQuantity &lt; $threshold) {
+                // 嵌入位置：代码片段A将在这里执行
+                echo &quot;Stock is low. Please reorder.\n&quot;;
+                {{ placeholder }}
+            } else {
+                echo &quot;Stock level is sufficient.\n&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="53" isTop="false" type="simple">
+        <code>
+            // 邮件发送状态：
+            $emailSent = true; // 邮件发送状态
+            if ($emailSent) {
+                // 嵌入位置：代码片段A将在这里执行
+                echo &quot;Email sent successfully.\n&quot;;
+                {{ placeholder }}
+            } else {
+                echo &quot;Failed to send email.\n&quot;;
+            }
+        </code>
+    </sample>
+    <sample id="54" isTop="false" type="simple">
+        <code>
+            // 用户反馈处理：
+            $feedbackReceived = true; // 反馈状态
+            if ($feedbackReceived) {
+                // 嵌入位置：代码片段A将在这里执行
+                echo &quot;Feedback received.\n&quot;;
+                {{ placeholder }}
+            } else {
+                echo &quot;No feedback received.\n&quot;;
+            }
+        </code>
+    </sample>
+</decorator>
