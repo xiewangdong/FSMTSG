@@ -1,78 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!--Document created by: xyd, with XmlGrid Online XML
 Editor, http://xmlgrid.net-->
 <!-- Date: 2024-07-18 -->
 <!-- Sanitizer 集合，主要用于 Invalid Sink 的配合使用-->
 <sanitizer>
     <sample id="1" variable_type="string">
-        <code>
-            $GLOBALS[&apos;tainted&apos;]=base64_encode($GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted=base64_encode($tainted);
+]]></code>
     </sample>
     <sample id="2" variable_type="string">
-        <code>
-            $GLOBALS[&apos;tainted&apos;]=htmlentities($GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted=htmlentities($tainted);
+]]></code>
     </sample>
     <sample id="3" variable_type="string">
-        <code>
-            $GLOBALS[&apos;tainted&apos;]=htmlspecialchars($GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted=htmlspecialchars($tainted);
+]]></code>
     </sample>
     <sample id="4" variable_type="string">
-        <code>
-            $GLOBALS[&apos;tainted&apos;] = htmlspecialchars($GLOBALS[&apos;tainted&apos;], ENT_QUOTES, &apos;UTF-8&apos;);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = htmlspecialchars($tainted, ENT_QUOTES, 'UTF-8');
+]]></code>
     </sample>
     <sample id="5" variable_type="string">
-        <code>
-            if(!in_array($GLOBALS[&apos;tainted&apos;],array(&apos;alice&apos;,&apos;bob&apos;,&apos;carl&apos;)))exit();
-        </code>
+        <code><![CDATA[
+global $tainted;
+if (!in_array($tainted, array('alice','bob','carl'))) {
+    exit();
+}
+]]></code>
     </sample>
     <sample id="6" variable_type="string">
-        <code>
-            $GLOBALS[&apos;tainted&apos;]=intval($GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted=intval($tainted);
+]]></code>
     </sample>
     <sample id="7" variable_type="number">
-        <code>
-            if(!is_numeric($GLOBALS[&apos;tainted&apos;]))exit();
-        </code>
+        <code><![CDATA[
+global $tainted;
+if (!is_numeric($tainted)) {
+    exit();
+}
+]]></code>
     </sample>
     <sample id="8" variable_type="number">
-        <code>
-            $GLOBALS[&apos;tainted&apos;]=md5($GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted=md5($tainted);
+]]></code>
     </sample>
     <sample id="9" variable_type="number">
-        <code>
-            if(!preg_match(&quot;/^[a-zA-Z0-9]+$/&quot;,$GLOBALS[&apos;tainted&apos;],$tmp))exit();
-        </code>
+        <code><![CDATA[
+global $tainted;
+if (!preg_match("/^[a-zA-Z0-9]+$/", $tainted, $tmp)) {
+    exit();
+}
+]]></code>
     </sample>
     <sample id="10" variable_type="number">
-        <code>
-            settype($GLOBALS[&apos;tainted&apos;],&apos;int&apos;);
-        </code>
+        <code><![CDATA[
+global $tainted;
+settype($tainted, 'int');
+]]></code>
     </sample>
     <sample id="11" variable_type="number">
-        <code>
-            $GLOBALS[&apos;tainted&apos;]=sprintf(&quot;%d&quot;,$GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted=sprintf("%d", $tainted);
+]]></code>
     </sample>
     <sample id="12" variable_type="number">
-        <code>
-            $GLOBALS[&apos;tainted&apos;]=(int)$GLOBALS[&apos;tainted&apos;];
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted=(int)$tainted;
+]]></code>
     </sample>
     <sample id="13" variable_type="number">
-        <code>
-            $GLOBALS[&apos;tainted&apos;] = str_ireplace(&apos;&lt;script&gt;&apos;, &apos;&apos;, $GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = str_ireplace('<script>', '', $tainted);
+]]></code>
     </sample>
     <sample id="14" variable_type="number">
-        <code>
-            $GLOBALS[&apos;tainted&apos;] = str_replace(&apos;&quot;&apos;, &apos;&amp;quot;&apos;, $GLOBALS[&apos;tainted&apos;]);
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = str_replace('"', '"', $tainted);
+]]></code>
     </sample>
 
 </sanitizer>

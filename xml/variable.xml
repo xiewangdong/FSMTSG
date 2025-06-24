@@ -1,36 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!--Document created by: xyd, with XmlGrid Online XML
 Editor, http://xmlgrid.net-->
 <!-- Date: 2024-07-18 -->
 <variable>
     <!-- Controllable Input -->
     <sample id="1" controllable="true">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $_GET[&apos;TaintedData&apos;];
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = 'Constant';
+$tainted = $_GET['TaintedData'];
+]]></code>
     </sample>
     <sample id="2" controllable="true">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $_POST[&apos;TaintedData&apos;];
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = 'Constant';
+$tainted = $_POST['TaintedData'];
+]]></code>
     </sample>
     <sample id="3" controllable="true">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $_REQUEST[&apos;TaintedData&apos;];
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = 'Constant';
+$tainted = $_REQUEST['TaintedData'];
+]]></code>
     </sample>
     <sample id="4" controllable="true">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $_COOKIE[&apos;TaintedData&apos;];
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = 'Constant';
+$tainted = $_COOKIE['TaintedData'];
+]]></code>
     </sample>
     <!-- <sample id="5" controllable="true">
         <code>
@@ -47,12 +47,13 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="7" controllable="true">
-        <code>
-            session_start();
-            $_SESSION[&apos;TaintedData&apos;]= $_REQUEST[&apos;TaintedData&apos;];
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $_SESSION[&apos;TaintedData&apos;];
-        </code>
+        <code><![CDATA[
+session_start();
+$_SESSION['TaintedData']= $_REQUEST['TaintedData'];
+global $tainted;
+$tainted = 'Constant';
+$tainted = $_SESSION['TaintedData'];
+]]></code>
     </sample>
     <!-- <sample id="8" controllable="true">
         <code>
@@ -67,14 +68,15 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="9" controllable="true">
-        <code>
-            
-            $array = array();
-            $array[] = &apos;Constant&apos;;
-            $array[] = $_GET[&apos;TaintedData&apos;] ;
-            $array[] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $array[1] ;
-        </code>
+        <code><![CDATA[
+
+$array = array();
+$array[] = 'Constant';
+$array[] = $_GET['TaintedData'] ;
+$array[] = 'Constant';
+global $tainted;
+$tainted = $array[1] ;
+]]></code>
     </sample>
     <!-- <sample id="10" controllable="true">
         <code>
@@ -149,14 +151,15 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="14" controllable="true">
-        <code>
-            
-            $array = array();
-            $array[] = &apos;Constant&apos;;
-            $array[] = $_POST[&apos;TaintedData&apos;] ;
-            $array[] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $array[1] ;
-        </code>
+        <code><![CDATA[
+
+$array = array();
+$array[] = 'Constant';
+$array[] = $_POST['TaintedData'] ;
+$array[] = 'Constant';
+global $tainted;
+$tainted = $array[1] ;
+]]></code>
     </sample>
     <!-- <sample id="15" controllable="true">
         <code>
@@ -231,14 +234,15 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="19" controllable="true">
-        <code>
-            
-            $array = array();
-            $array[] = &apos;Constant&apos;;
-            $array[] = $_COOKIE[&apos;TaintedData&apos;] ;
-            $array[] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $array[1] ;
-        </code>
+        <code><![CDATA[
+
+$array = array();
+$array[] = 'Constant';
+$array[] = $_COOKIE['TaintedData'] ;
+$array[] = 'Constant';
+global $tainted;
+$tainted = $array[1] ;
+]]></code>
     </sample>
     <!-- <sample id="20" controllable="true">
         <code>
@@ -303,32 +307,32 @@ Editor, http://xmlgrid.net-->
 
     <!-- Uncontrollable Input -->
     <sample id="31" controllable="false">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = $_GET[&apos;TaintedData&apos;];
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = $_GET['TaintedData'];
+$tainted = 'Constant';
+]]></code>
     </sample>
     <sample id="32" controllable="false">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = $_POST[&apos;TaintedData&apos;];
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = $_POST['TaintedData'];
+$tainted = 'Constant';
+]]></code>
     </sample>
     <sample id="33" controllable="false">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = $_REQUEST[&apos;TaintedData&apos;];
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = $_REQUEST['TaintedData'];
+$tainted = 'Constant';
+]]></code>
     </sample>
     <sample id="34" controllable="false">
-        <code>
-            
-            $GLOBALS[&apos;tainted&apos;] = $_COOKIE[&apos;TaintedData&apos;];
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-        </code>
+        <code><![CDATA[
+global $tainted;
+$tainted = $_COOKIE['TaintedData'];
+$tainted = 'Constant';
+]]></code>
     </sample>
     <!-- <sample id="35" controllable="false">
         <code>
@@ -345,12 +349,13 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="37" controllable="false">
-        <code>
-            session_start();
-            $_SESSION[&apos;TaintedData&apos;]= $_REQUEST[&apos;TaintedData&apos;];
-            $GLOBALS[&apos;tainted&apos;] = $_SESSION[&apos;TaintedData&apos;];
-            $GLOBALS[&apos;tainted&apos;] = &apos;Constant&apos;;
-        </code>
+        <code><![CDATA[
+session_start();
+$_SESSION['TaintedData']= $_REQUEST['TaintedData'];
+global $tainted;
+$tainted = $_SESSION['TaintedData'];
+$tainted = 'Constant';
+]]></code>
     </sample>
     <!-- <sample id="38" controllable="false">
         <code>
@@ -370,14 +375,15 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="39" controllable="false">
-        <code>
-            
-            $array = array();
-            $array[] = &apos;Constant&apos;;
-            $array[] = $_GET[&apos;TaintedData&apos;] ;
-            $array[] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $array[2] ;
-        </code>
+        <code><![CDATA[
+
+$array = array();
+$array[] = 'Constant';
+$array[] = $_GET['TaintedData'] ;
+$array[] = 'Constant';
+global $tainted;
+$tainted = $array[2] ;
+]]></code>
     </sample>
     <!-- <sample id="40" controllable="false">
         <code>
@@ -458,14 +464,15 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="44" controllable="false">
-        <code>
-            
-            $array = array();
-            $array[] = &apos;Constant&apos;;
-            $array[] = $_POST[&apos;TaintedData&apos;] ;
-            $array[] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $array[2] ;
-        </code>
+        <code><![CDATA[
+
+$array = array();
+$array[] = 'Constant';
+$array[] = $_POST['TaintedData'] ;
+$array[] = 'Constant';
+global $tainted;
+$tainted = $array[2] ;
+]]></code>
     </sample>
     <!-- <sample id="45" controllable="false">
         <code>
@@ -547,14 +554,15 @@ Editor, http://xmlgrid.net-->
         </code>
     </sample> -->
     <sample id="49" controllable="false">
-        <code>
-            
-            $array = array();
-            $array[] = &apos;Constant&apos;;
-            $array[] = $_COOKIE[&apos;TaintedData&apos;] ;
-            $array[] = &apos;Constant&apos;;
-            $GLOBALS[&apos;tainted&apos;] = $array[2] ;
-        </code>
+        <code><![CDATA[
+
+$array = array();
+$array[] = 'Constant';
+$array[] = $_COOKIE['TaintedData'] ;
+$array[] = 'Constant';
+global $tainted;
+$tainted = $array[2] ;
+]]></code>
     </sample>
     <!-- <sample id="50" controllable="false">
         <code>

@@ -6,7 +6,6 @@ Editor, http://xmlgrid.net-->
     <sample id="1" type="none" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
 
             /***************** fragment begin ******************/
@@ -49,7 +48,6 @@ Editor, http://xmlgrid.net-->
     <sample id="2" type="UV" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -91,7 +89,6 @@ Editor, http://xmlgrid.net-->
     <sample id="3" type="UV.IS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -138,7 +135,6 @@ Editor, http://xmlgrid.net-->
     <sample id="4" type="UV.SS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -185,7 +181,6 @@ Editor, http://xmlgrid.net-->
     <sample id="5" type="UV.VS" vulnerability="false" discrimination_group="CV.VS">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -231,7 +226,6 @@ Editor, http://xmlgrid.net-->
     <sample id="6" type="UV.NS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -278,7 +272,6 @@ Editor, http://xmlgrid.net-->
     <sample id="7" type="UV.IS.VS" vulnerability="false" discrimination_group="CV.IS.VS">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -341,7 +334,6 @@ Editor, http://xmlgrid.net-->
     <sample id="8" type="UV.IS.NS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -404,7 +396,6 @@ Editor, http://xmlgrid.net-->
     <sample id="9" type="UV.SS.VS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -467,7 +458,6 @@ Editor, http://xmlgrid.net-->
     <sample id="10" type="UV.SS.NS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -530,7 +520,6 @@ Editor, http://xmlgrid.net-->
     <sample id="11" type="CV" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -573,7 +562,6 @@ Editor, http://xmlgrid.net-->
     <sample id="12" type="CV.SS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -621,7 +609,6 @@ Editor, http://xmlgrid.net-->
     <sample id="13" type="CV.SS.VS" vulnerability="false" discrimination_group="CV.IS.VS">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -684,7 +671,6 @@ Editor, http://xmlgrid.net-->
     <sample id="14" type="CV.SS.NS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -747,7 +733,6 @@ Editor, http://xmlgrid.net-->
     <sample id="15" type="CV.NS" vulnerability="false" discrimination_group="CV.VS">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -795,7 +780,6 @@ Editor, http://xmlgrid.net-->
     <sample id="16" type="CV.IS" vulnerability="false" discrimination_group="none">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -843,7 +827,6 @@ Editor, http://xmlgrid.net-->
     <sample id="17" type="CV.IS.NS" vulnerability="false" discrimination_group="CV.IS.VS">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -906,7 +889,6 @@ Editor, http://xmlgrid.net-->
     <sample id="18" type="CV.IS.VS" vulnerability="true" discrimination_group="CIV">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
@@ -969,7 +951,6 @@ Editor, http://xmlgrid.net-->
     <sample id="19" type="CV.VS" vulnerability="true" discrimination_group="CV">
         <code>
             &lt;?php
-            global $tainted;
             $tainted = &apos;Constant&apos;;
             
             /***************** fragment begin ******************/
